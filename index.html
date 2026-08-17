@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ziptaa — AI Receptionist for Small Businesses</title>
+<meta name="description" content="Ziptaa is an AI receptionist that answers your business calls 24/7, books appointments, and captures leads for small businesses across the US.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2563EB;
+    --blue-dark: #1D4ED8;
+    --bg: #F9FAFB;
+    --card: #FFFFFF;
+    --ink: #111827;
+    --body: #374151;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--body);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  h1, h2, h3, .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--ink);
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: var(--blue-dark); }
+
+  /* Hero */
+  .hero {
+    padding: 88px 0 72px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    background: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    max-width: 640px;
+    margin: 0 auto 20px;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 540px;
+    margin: 0 auto 32px;
+  }
+  .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-large { padding: 13px 28px; font-size: 15px; }
+  .trust-line { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  /* Signature element: live call → booking strip */
+  .call-strip {
+    margin: 56px auto 0;
+    max-width: 620px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .call-strip .row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--body); padding: 8px 0; }
+  .call-strip .row + .row { border-top: 1px dashed var(--border); }
+  .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--blue); flex-shrink: 0;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(37,99,235,0); }
+  }
+  .check { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; flex-shrink: 0; }
+  .call-strip .label { font-weight: 500; color: var(--ink); }
+  .call-strip .meta { color: var(--muted); margin-left: auto; font-size: 13px; }
+
+  /* Features */
+  .section { padding: 64px 0; }
+  .section-head { text-align: center; margin-bottom: 40px; }
+  .section-head h2 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+  .section-head p { color: var(--muted); font-size: 15px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .card .icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: var(--muted); }
+
+  /* How it works */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 8px;
+  }
+  .step .num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .step p { font-size: 14px; color: var(--muted); }
+
+  /* CTA band */
+  .cta-band {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 56px 40px;
+    text-align: center;
+    margin: 64px 0;
+  }
+  .cta-band h2 { color: #fff; font-size: 26px; margin-bottom: 10px; }
+  .cta-band p { color: #9CA3AF; margin-bottom: 24px; font-size: 15px; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    background: var(--card);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand p { font-size: 13px; color: var(--muted); margin-top: 8px; max-width: 280px; }
+  .footer-info { font-size: 13px; color: var(--muted); text-align: right; }
+  .footer-info div { margin-bottom: 4px; }
+  .footer-info a:hover { color: var(--blue); }
+  .copyright {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: #9CA3AF;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 32px; }
+    .grid, .steps { grid-template-columns: 1fr; }
+    footer .wrap { flex-direction: column; }
+    .footer-info { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>Ziptaa</div>
+    <a href="https://app.ziptaa.com" class="btn btn-primary">Go to Dashboard</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Now onboarding small businesses</span>
+    <h1>Never miss another call</h1>
+    <p>Ziptaa is an AI receptionist that answers your business phone 24/7, books appointments straight to your calendar, and captures every lead — even when you can't pick up.</p>
+    <div class="hero-ctas">
+      <a href="https://app.ziptaa.com" class="btn btn-primary btn-large">Get Started</a>
+      <a href="#how-it-works" class="btn btn-large" style="border:1px solid var(--border); color:var(--ink); background:#fff;">See how it works</a>
+    </div>
+    <div class="trust-line">No setup fees · Live in minutes · Cancel anytime</div>
+
+    <div class="call-strip">
+      <div class="row"><span class="pulse"></span><span class="label">Incoming call</span><span class="meta">Answered by Ziptaa</span></div>
+      <div class="row"><span class="check"></span><span class="label">Appointment booked</span><span class="meta">Synced to Google Calendar</span></div>
+      <div class="row"><span class="check"></span><span class="label">Lead captured</span><span class="meta">Added to dashboard</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Everything a front desk does — without the front desk</h2>
+      <p>Built specifically for dental practices, salons, cleaning companies, and contractors.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">24</div>
+        <h3>24/7 AI Receptionist</h3>
+        <p>Answers every call day or night — no hold music, no missed calls, no voicemail.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✓</div>
+        <h3>Instant Appointment Booking</h3>
+        <p>Checks your real-time availability and books directly into Google Calendar during the call.</p>
+      </div>
+      <div class="card">
+        <div class="icon">＋</div>
+        <h3>Lead Capture</h3>
+        <p>Never lose a caller's info — every call is logged with name, number, and reason for calling.</p>
+      </div>
+      <div class="card">
+        <div class="icon">?</div>
+        <h3>Custom Knowledge Base</h3>
+        <p>Your AI receptionist answers questions about services, hours, and policies using info you provide.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▤</div>
+        <h3>Call Transcripts & Insights</h3>
+        <p>Review every conversation with full transcripts, outcomes, and caller sentiment.</p>
+      </div>
+      <div class="card">
+        <div class="icon">☎</div>
+        <h3>Works With Your Number</h3>
+        <p>Keep your existing business line or get a new one — your customers won't notice a difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Live in three steps</h2>
+      <p>No technical setup required.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Sign up</h3>
+        <p>Create your account and tell us about your business in minutes.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Configure your receptionist</h3>
+        <p>Set your greeting, hours, and services — we handle the rest.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Go live</h3>
+        <p>Your AI receptionist starts answering calls immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cta-band">
+    <h2>Stop missing calls. Start booking appointments.</h2>
+    <p>Set up your AI receptionist today.</p>
+    <a href="https://app.ziptaa.com" class="btn btn-primary btn-large">Get Started</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <div class="brand" style="font-size:17px;"><span class="dot"></span>Ziptaa</div>
+      <p>AI receptionist for small businesses. Answers calls, books appointments, and captures leads — 24/7.</p>
+    </div>
+    <div class="footer-info">
+      <div><strong style="color:var(--ink);">Ziptaa</strong></div>
+      <div>10000 West Ridgewood Drive 211</div>
+      <div>Parma Heights, Ohio 44130, US</div>
+      <div style="margin-top:8px;"><a href="mailto:support@ziptaa.com">support@ziptaa.com</a></div>
+      <div><a href="https://app.ziptaa.com">app.ziptaa.com</a></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="copyright">© 2026 Ziptaa. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
