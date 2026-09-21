@@ -254,6 +254,7 @@ END STEPPER V1 old card 2 css */
 
 /* FEATURES */
 .features{background:#fff;padding-top:130px}
+/* FEATURES V1 css:
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
 .feat{background:var(--card);border-radius:20px;padding:24px 24px 0;height:420px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(15,23,42,.05)}
 .feat h3{font-family:var(--text);font-size:18px;font-weight:600}
@@ -265,6 +266,184 @@ END STEPPER V1 old card 2 css */
 .agent .row em{font-style:normal;color:var(--body)}
 .agent b{display:block;font-size:18px;color:var(--ink);margin:6px 0 10px;font-weight:600}
 .agent .num{border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;color:var(--muted);font-size:16px}
+*/
+
+/* FEATURES V2 (bento) */
+.features2{background:#fff;padding-top:130px}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto auto;gap:20px;margin-top:56px}
+.bt-card{border:1px solid var(--border);border-radius:20px;padding:24px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.bt-card h3{font-family:var(--text);font-size:18px;font-weight:600;color:var(--ink)}
+.bt-card p{font-size:15px;line-height:24px;color:var(--body);margin-top:8px}
+.bt-ui{margin-top:auto;min-height:160px}
+.bt-1{grid-column:1 / span 2;grid-row:1;background:var(--card)}
+.bt-2{grid-column:3;grid-row:1;background:#fff}
+.bt-3{grid-column:1;grid-row:2;background:#fff}
+.bt-4{grid-column:2;grid-row:2;background:#F5F8FF}
+.bt-5{grid-column:3;grid-row:2;background:#fff}
+.bt-6{grid-column:1 / -1;grid-row:3;background:var(--card)}
+@media(min-width:1001px){
+  .bt-2{min-height:328px}
+  .bt-3,.bt-4,.bt-5{min-height:380px}
+  .bt-6{min-height:380px}
+}
+/* bt-c1 AI Receptionist mini UI */
+.bt-card.bt-c1{background:var(--card);border:1px solid #E5E7EB;border-radius:20px;padding:22px 22px 0;overflow:hidden;position:relative;height:328px;display:flex;flex-direction:column}
+.bt-card.bt-c1 h3{font-size:16px;font-weight:600;color:var(--ink)}
+.bt-card.bt-c1 p{font-size:13.5px;line-height:1.55;color:#4B5563;max-width:340px;margin-top:6px}
+.bt-c1 .bt-ui{margin-top:auto;position:relative;height:172px;min-height:0}
+.bt-c1 .bt-agent,.bt-c1 .bt-call{position:absolute;bottom:-14px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 2px 8px rgba(15,23,42,.05);padding:14px 14px 40px}
+.bt-c1 .bt-agent{left:0;width:46%}
+.bt-c1 .bt-call{right:0;width:50%}
+.bt-c1 .bt-row{display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.bt-c1 .bt-row span{color:#6B7280}
+.bt-c1 .bt-row b{display:flex;align-items:center;gap:6px;font-weight:400;color:var(--ink)}
+.bt-c1 .bt-row b i{width:7px;height:7px;border-radius:50%;background:#10B981}
+.bt-c1 .bt-name{font-size:15px;font-weight:600;color:var(--ink);margin:6px 0 9px}
+.bt-c1 .bt-num{display:flex;align-items:center;justify-content:space-between;height:34px;padding:0 10px;border:1px solid #E5E7EB;border-radius:9px;font-size:12.5px;color:#4B5563}
+.bt-c1 .bt-num svg{width:15px;height:15px;color:#6B7280;flex:none}
+.bt-c1 .bt-head{display:flex;align-items:center;gap:8px}
+.bt-c1 .bt-tile{width:22px;height:22px;border-radius:7px;background:#EFF4FF;color:#2563EB;display:flex;align-items:center;justify-content:center;flex:none}
+.bt-c1 .bt-tile svg{width:13px;height:13px}
+.bt-c1 .bt-head b{display:block;font-size:13px;font-weight:600;color:var(--ink);line-height:1.25}
+.bt-c1 .bt-head small{display:block;font-size:11px;color:#6B7280;line-height:1.25}
+.bt-c1 .bt-wave{display:flex;align-items:center;gap:3px;height:46px;margin-top:12px}
+.bt-c1 .bt-wave i{width:3px;border-radius:2px;background:#2563EB;flex:none;transform-origin:center;animation:bt-bar 2.8s ease-in-out infinite;animation-delay:var(--d,0s);will-change:transform}
+.bt-c1 .bt-wave i:nth-child(-n+2),.bt-c1 .bt-wave i:nth-last-child(-n+3){background:#BFD1FA}
+.bt-c1 .bt-meta{display:flex;justify-content:space-between;font-size:11px;color:#6B7280;margin-top:8px}
+@keyframes bt-bar{0%,100%{transform:scaleY(.62)}50%{transform:scaleY(1.12)}}
+@media(prefers-reduced-motion:reduce){.bt-c1 .bt-wave i{animation:none}}
+/* bt-c2 Appointment Booking mini UI */
+.bt-card.bt-c2{background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:22px 22px 0;overflow:hidden;position:relative;min-height:380px;display:flex;flex-direction:column}
+.bt-card.bt-c2 h3{font-size:16px;font-weight:600;color:var(--ink)}
+.bt-card.bt-c2 p{font-size:13.5px;line-height:1.55;color:#4B5563;margin-top:6px}
+.bt-c2 .bt-ui{margin-top:auto;position:relative;height:222px;min-height:0}
+.bt-c2 .bt-cal{position:absolute;left:0;right:0;bottom:-12px;height:214px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 2px 8px rgba(15,23,42,.05);overflow:hidden}
+.bt-c2 .bt-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #EEF0F3}
+.bt-c2 .bt-sync{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--ink)}
+.bt-c2 .bt-tog{position:relative;width:30px;height:18px;border-radius:999px;background:#2563EB;flex:none}
+.bt-c2 .bt-tog::after{content:"";position:absolute;right:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#fff}
+.bt-c2 .bt-seg{display:flex;padding:2px;background:#F3F4F6;border-radius:8px;font-size:11px;font-weight:500;color:#6B7280}
+.bt-c2 .bt-seg span{padding:2px 8px;border-radius:6px}
+.bt-c2 .bt-seg span.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(15,23,42,.08)}
+.bt-c2 .bt-days,.bt-c2 .bt-body{display:grid;grid-template-columns:repeat(3,1fr)}
+.bt-c2 .bt-days{border-bottom:1px solid #EEF0F3}
+.bt-c2 .bt-days div{padding:7px 0;text-align:center;font-size:11.5px;font-weight:500;color:#4B5563;border-left:1px solid #EEF0F3}
+.bt-c2 .bt-body{height:150px;position:relative}
+.bt-c2 .bt-col{position:relative;border-left:1px solid #EEF0F3}
+.bt-c2 .bt-days div:first-child,.bt-c2 .bt-col:first-child{border-left:0}
+.bt-c2 .bt-ev{position:absolute;left:8px;right:8px;top:var(--t);height:var(--h);border-radius:9px;padding:7px 10px;font-size:11.5px;line-height:1.3;font-weight:600;opacity:0;transform:translateY(6px);animation:bt-appear .9s ease forwards;animation-delay:var(--d,0s);animation-play-state:paused}
+.bt-c2 .bt-ev span{display:block;font-weight:400;font-size:10.5px;margin-top:1px}
+.bt-c2 .bt-blue{background:#E6EEFF;color:#1E4FBF}.bt-c2 .bt-blue span{color:#3B6FE0}
+.bt-c2 .bt-gray{background:#F1F3F5;color:#374151}.bt-c2 .bt-gray span{color:#6B7280}
+.bt-c2 .bt-green{background:#DCF5E6;color:#166534}.bt-c2 .bt-green span{color:#2F8F5B}
+.bt-c2.bt-in .bt-ev{animation-play-state:running}
+@keyframes bt-appear{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.bt-c2 .bt-ev{opacity:1;transform:none;animation:none}}
+/* bt-c3 Lead Capture mini UI */
+.bt-card.bt-c3{background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:22px 0 0 22px;overflow:hidden;position:relative;display:flex;flex-direction:column;min-height:328px}
+.bt-card.bt-c3 h3{font-size:16px;font-weight:600;color:var(--ink)}
+.bt-card.bt-c3 p{font-size:13.5px;line-height:1.55;color:#4B5563;margin:6px 22px 0 0}
+.bt-c3 .bt-ui{margin-top:auto;position:relative;height:186px;min-height:0}
+.bt-c3 .bt-list{position:absolute;left:0;top:0;bottom:-14px;width:520px;background:#fff;border:1px solid #E5E7EB;border-right:0;border-radius:14px 0 0 14px;box-shadow:0 2px 8px rgba(15,23,42,.05);padding:12px 12px 0 12px;overflow:hidden}
+.bt-c3 .bt-lh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.bt-c3 .bt-lh b{font-size:14px;font-weight:600;color:var(--ink)}
+.bt-c3 .bt-filter{display:flex;align-items:center;gap:4px;height:24px;padding:0 9px;border:1px solid #E5E7EB;border-radius:999px;font-size:11.5px;color:#4B5563;margin-right:60px}
+.bt-c3 .bt-filter svg{width:12px;height:12px;flex:none}
+.bt-c3 .bt-item{display:flex;align-items:center;gap:12px;height:48px;border:1px solid #E5E7EB;border-radius:12px;margin-bottom:8px;padding:0 12px 0 0;opacity:0;transform:translateY(6px);animation:bt-appear .9s ease forwards;animation-delay:var(--d,0s);animation-play-state:paused}
+.bt-c3 .bt-date{width:52px;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid #EEF0F3;flex:none}
+.bt-c3 .bt-date b{font-size:15px;font-weight:600;color:#374151;line-height:1.2}
+.bt-c3 .bt-date small{font-size:10px;color:#9CA3AF;line-height:1.2}
+.bt-c3 .bt-txt b{display:block;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap}
+.bt-c3 .bt-meta{display:flex;gap:6px;margin-top:3px}
+.bt-c3 .bt-meta span{font-size:10.5px;white-space:nowrap}
+.bt-c3 .bt-tag{font-weight:600;padding:1px 7px;border-radius:6px}
+.bt-c3 .bt-new{background:#E6EEFF;color:#1E4FBF}
+.bt-c3 .bt-book{background:#DCF5E6;color:#166534}
+.bt-c3 .bt-fu{background:#F1F3F5;color:#374151}
+.bt-c3 .bt-chip{color:#6B7280;background:#F3F4F6;border-radius:6px;padding:1px 7px}
+.bt-c3.bt-in .bt-item{animation-play-state:running}
+@media(prefers-reduced-motion:reduce){.bt-c3 .bt-item{opacity:1;transform:none;animation:none}}
+/* bt-c4 Knowledge Base mini UI */
+.bt-card.bt-c4{background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:22px 22px 0;overflow:hidden;position:relative;display:flex;flex-direction:column;min-height:380px}
+.bt-card.bt-c4 h3{font-size:16px;font-weight:600;color:var(--ink)}
+.bt-card.bt-c4 p{font-size:13.5px;line-height:1.55;color:#4B5563;margin-top:6px}
+.bt-c4 .bt-ui{margin-top:auto;position:relative;height:222px;min-height:0}
+.bt-c4 .bt-kb{position:absolute;left:0;right:0;bottom:-12px;height:214px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 2px 8px rgba(15,23,42,.05);padding:12px 12px 0;overflow:hidden}
+.bt-c4 .bt-top{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.bt-c4 .bt-search{flex:1;height:30px;border:1px solid #E5E7EB;border-radius:9px;padding:0 10px;display:flex;align-items:center;gap:7px;font-size:12px;color:#9CA3AF}
+.bt-c4 .bt-search svg{width:14px;height:14px;flex:none}
+.bt-c4 .bt-count{font-size:11px;color:#6B7280;white-space:nowrap}
+.bt-c4 .bt-q{border:1px solid #E5E7EB;border-radius:12px;margin-bottom:8px;padding:0 12px;opacity:0;transform:translateY(6px);animation:bt-appear .9s ease forwards;animation-delay:var(--d,0s);animation-play-state:paused}
+.bt-c4 .bt-qh{display:flex;align-items:center;gap:10px;min-height:42px}
+.bt-c4 .bt-tile{width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:none}
+.bt-c4 .bt-tile svg{width:13px;height:13px}
+.bt-c4 .bt-qh b{font-size:13px;font-weight:600;color:var(--ink);flex:1}
+.bt-c4 .bt-tag{font-size:10.5px;font-weight:600;border-radius:6px;padding:1px 7px}
+.bt-c4 .bt-chev{width:14px;height:14px;color:#9CA3AF;flex:none}
+.bt-c4 .bt-ans{font-size:12px;line-height:1.5;color:#6B7280;padding:0 0 11px 32px;opacity:0;animation:bt-appear .9s ease 3.2s forwards;animation-play-state:paused}
+.bt-c4.bt-in .bt-q,.bt-c4.bt-in .bt-ans{animation-play-state:running}
+@media(prefers-reduced-motion:reduce){.bt-c4 .bt-q,.bt-c4 .bt-ans{opacity:1;transform:none;animation:none}}
+/* bt-c5 Call Transcripts mini UI */
+.bt-card.bt-c5{background:#F5F8FF;border:1px solid #E5E7EB;border-radius:20px;padding:22px 22px 0;overflow:hidden;position:relative;display:flex;flex-direction:column;min-height:380px}
+.bt-card.bt-c5 h3{font-size:16px;font-weight:600;color:var(--ink)}
+.bt-card.bt-c5 p{font-size:13.5px;line-height:1.55;color:#4B5563;margin-top:6px}
+.bt-c5 .bt-ui{margin-top:auto;position:relative;height:238px;min-height:0}
+.bt-c5 .bt-tx{position:absolute;left:0;right:0;bottom:-12px;height:230px;background:#fff;border:1px solid #E5E7EB;border-radius:14px;box-shadow:0 2px 8px rgba(15,23,42,.05);padding:11px 14px 0;overflow:hidden}
+.bt-c5 .bt-th{display:flex;justify-content:space-between;align-items:center;padding-bottom:9px;border-bottom:1px solid #EEF0F3}
+.bt-c5 .bt-who{display:flex;align-items:center;gap:8px}
+.bt-c5 .bt-ava{width:22px;height:22px;border-radius:50%;background:#F3F4F6;color:#6B7280;display:grid;place-items:center;flex:none}
+.bt-c5 .bt-ava svg{width:12px;height:12px}
+.bt-c5 .bt-who b{display:block;font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.25}
+.bt-c5 .bt-who small{display:block;font-size:11px;font-weight:400;color:#6B7280;line-height:1.25}
+.bt-c5 .bt-dur{display:flex;align-items:center;gap:4px;font-size:11px;color:#6B7280}
+.bt-c5 .bt-dur svg{width:13px;height:13px;flex:none}
+.bt-c5 .bt-msgs{display:grid;gap:9px;padding-top:12px}
+.bt-c5 .bt-row{display:flex;align-items:flex-end;gap:8px;opacity:0;transform:translateY(6px);animation:bt-appear .9s ease forwards;animation-delay:var(--d,0s);animation-play-state:paused}
+.bt-c5 .bt-row.bt-caller{justify-content:flex-end}
+.bt-c5 .bt-b{max-width:76%;padding:9px 13px;border-radius:14px;font-size:12.5px;line-height:1.45}
+.bt-c5 .bt-caller .bt-b{background:#EAF3FF;color:#1D6FD1;border-bottom-right-radius:5px}
+.bt-c5 .bt-ai .bt-b{background:#F1F3F5;color:#1F2937;border-bottom-left-radius:5px}
+.bt-c5 .bt-av{width:26px;height:26px;border-radius:50%;flex:none;position:relative;overflow:hidden;background:linear-gradient(140deg,#7DB4FF 0%,#2563EB 65%,#1D4ED8 100%);box-shadow:0 2px 6px rgba(37,99,235,.3);display:grid;place-items:center}
+.bt-c5 .bt-av::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.55),transparent 55%)}
+.bt-c5 .bt-av svg{position:relative;width:13px;height:13px;stroke:#fff;stroke-width:2.2}
+.bt-c5.bt-in .bt-row{animation-play-state:running}
+@media(prefers-reduced-motion:reduce){.bt-c5 .bt-row{opacity:1;transform:none;animation:none}}
+/* bt-c6 Always Available mini UI */
+.bt-card.bt-c6{background:var(--card);border:1px solid #E5E7EB;border-radius:20px;padding:24px 30px 20px;overflow:hidden;position:relative}
+.bt-card.bt-c6 h3{font-size:16px;font-weight:600;color:var(--ink)}
+.bt-card.bt-c6 p{font-size:13.5px;line-height:1.55;color:#4B5563;margin-top:6px;max-width:420px}
+.bt-c6 .bt-panel{margin-top:16px;background:#fff;border:1px solid #E5E7EB;border-radius:16px;padding:18px 28px 16px;position:relative}
+.bt-c6 .bt-hd{display:flex;align-items:center;justify-content:space-between}
+.bt-c6 .bt-big{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--ink)}
+.bt-c6 .bt-big span{color:#9CA3AF}
+.bt-c6 .bt-hr{display:flex;flex-direction:column;align-items:flex-end}
+.bt-c6 .bt-segs{display:flex;gap:6px}
+.bt-c6 .bt-segs span{display:inline-flex;align-items:center;height:30px;padding:0 14px;font-size:12.5px;border-radius:999px;border:1px solid #E5E7EB;background:#fff;color:#374151}
+.bt-c6 .bt-segs span.on{background:#111827;color:#fff;border-color:#111827}
+.bt-c6 .bt-legend{display:flex;gap:16px;justify-content:flex-end;margin-top:8px;font-size:12px;color:#374151}
+.bt-c6 .bt-legend span{display:flex;align-items:center;gap:6px}
+.bt-c6 .bt-legend i{width:9px;height:9px;border-radius:50%;background:#2563EB;flex:none}
+.bt-c6 .bt-legend span:last-child i{background:#D4D4D4}
+.bt-c6 .bt-chart{position:relative;margin-top:14px;padding-left:44px}
+.bt-c6 .bt-gl{position:absolute;left:44px;right:0;border-top:1px dashed #E5E7EB}
+.bt-c6 .bt-yl{position:absolute;left:0;font-size:11px;color:#9CA3AF;transform:translateY(-50%)}
+.bt-c6 .bt-bars{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;height:112px;padding:0 6px}
+.bt-c6 .bt-b{flex:0 0 20px;border-radius:999px;background:repeating-linear-gradient(135deg,#ECECEC 0 3px,#F5F5F5 3px 6px);position:relative;opacity:0;transform:translateY(8px);animation:bt-appear .7s ease forwards;animation-delay:calc(var(--i)*.04s);animation-play-state:paused}
+.bt-c6 .bt-lit::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,#3B82F6 0%,#93B8F8 55%,#F4F8FF 100%);opacity:0;animation:bt-light 1s ease 1.6s both;animation-play-state:paused}
+.bt-c6 .bt-dot{position:absolute;left:50%;top:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#2563EB;border:2px solid #fff;box-sizing:border-box;opacity:0;animation:bt-fade .8s ease 2.4s forwards;animation-play-state:paused}
+.bt-c6 .bt-tip{position:absolute;left:50%;top:-32px;transform:translateX(-50%);white-space:nowrap;background:#2563EB;color:#fff;font-size:11.5px;font-weight:500;padding:4px 9px;border-radius:7px;opacity:0;animation:bt-fade .8s ease 2.4s forwards;animation-play-state:paused}
+.bt-c6 .bt-tip::after{content:"";position:absolute;left:50%;bottom:-4px;width:8px;height:8px;margin-left:-4px;background:#2563EB;transform:rotate(45deg)}
+.bt-c6 .bt-xl{display:flex;justify-content:space-between;padding-left:50px;padding-right:6px;margin-top:12px;font-size:11px;color:#6B7280}
+.bt-c6.bt-in .bt-b,.bt-c6.bt-in .bt-lit::before,.bt-c6.bt-in .bt-dot,.bt-c6.bt-in .bt-tip{animation-play-state:running}
+@keyframes bt-light{from{opacity:0}to{opacity:1}}
+@keyframes bt-fade{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.bt-c6 .bt-b,.bt-c6 .bt-dot,.bt-c6 .bt-tip{opacity:1;animation:none}.bt-c6 .bt-b{transform:none}.bt-c6 .bt-lit::before{opacity:1;animation:none}}
+@media(max-width:700px){
+  .bt-c6 .bt-hd{flex-direction:column;align-items:flex-start;gap:12px}
+  .bt-c6 .bt-b:nth-child(even){display:none}
+  .bt-c6 .bt-b{flex:0 0 14px}
+  .bt-c6 .bt-xl span:nth-child(even){display:none}
+}
 
 /* INDUSTRIES */
 .industries{background:#fff;padding-top:130px}
@@ -288,27 +467,60 @@ END STEPPER V1 old card 2 css */
 .bub small{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin-bottom:6px;font-weight:600}
 .bub.ai{align-self:flex-end}
 
-/* PRICING */
+/* PRICING V1 css:
 .pricing{background:#fff;padding:250px 0 120px}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;align-items:start}
 .plan{background:#fff;border-radius:24px;padding:18px}
-.plan .top{background:var(--card);border-radius:16px;padding:18px 18px 0;height:272px;display:flex;flex-direction:column}
+.plan .top{background:var(--card);border-radius:16px;padding:18px 18px 0;height:200px;display:flex;flex-direction:column}
 .plan.pop .top{background:var(--blue);color:#fff}
 .plan-head{display:flex;justify-content:space-between;align-items:center}
 .badge{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border:1px solid var(--border);background:#fff;border-radius:99px;font-size:14px;color:var(--ink)}
 .badge svg{width:14px;height:14px;color:var(--blue)}
-.plan-head strong{font-family:var(--head);font-weight:600;font-size:18px;color:var(--blue)}
-.plan.pop .plan-head strong{color:#fff}
+.pop-pill{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.18);color:#fff;font-size:13px;font-weight:500;border:1px solid rgba(255,255,255,.3)}
 .price{font-family:var(--head);font-size:40px;font-weight:500;color:#000;margin-top:auto;line-height:1}
 .price small{font-size:24px}
 .plan.pop .price{color:#fff}
-.plan-desc{font-size:16px;color:var(--muted);padding:20px 12px;line-height:1.5;min-height:98px}
+.plan-desc{font-size:16px;color:var(--muted);padding:20px 12px 0;margin-bottom:20px;line-height:1.5;min-height:98px}
 .plan .btn{width:100%}
 .plan.pop .btn{background:#2563EB;border:none;color:#fff;box-shadow:0 1px 2px rgba(37,99,235,0.25)}
 .plan.pop .btn:hover{background:#1D4ED8}
 .plan ul{list-style:none;padding:28px 6px 24px;display:grid;gap:16px}
 .plan li{display:flex;gap:14px;align-items:center;font-size:16px}
 .plan-note{text-align:center;margin-top:36px;font-size:18px}
+*/
+/* PRICING V2 */
+.pricing{background:#fff;padding:120px 0}
+.pr-head{text-align:center}
+.pr-pill{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 13px;background:#fff;border:1px solid var(--border);border-radius:99px;font-size:12.5px;font-weight:500;color:var(--ink);box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.pr-pill i{width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.pr-sub{text-align:center;font-size:15.5px;color:#4B5563;margin-top:10px}
+.pr-stage{position:relative;margin-top:44px;padding:34px 0}
+.pr-x{position:absolute;width:11px;height:11px;pointer-events:none}
+.pr-x::before,.pr-x::after{content:"";position:absolute;background:#CBD0D8}
+.pr-x::before{left:0;right:0;top:5px;height:1px}
+.pr-x::after{top:0;bottom:0;left:5px;width:1px}
+.pr-x.tl{left:16px;top:6px}.pr-x.tr{right:16px;top:6px}.pr-x.bl{left:16px;bottom:6px}.pr-x.br{right:16px;bottom:6px}
+.pr-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 24px}
+.pr-plan{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #E5E7EB;border-radius:20px;padding:28px 26px 26px}
+.pr-plan.pr-pop{border-color:#93B4F5;box-shadow:0 0 0 4px rgba(37,99,235,.07),0 12px 30px rgba(37,99,235,.10)}
+.pr-name{display:flex;align-items:center;font-size:18px;font-weight:500;color:var(--ink)}
+.pr-tag{margin-left:10px;font-size:11.5px;font-weight:500;color:#1E4FBF;background:#E6EEFF;border:1px solid #C9DAFB;border-radius:999px;padding:2px 9px}
+.pr-price{font-size:46px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--ink);margin-top:34px}
+.pr-per{font-size:12.5px;color:#6B7280;margin-top:7px}
+.pr-desc{font-size:14px;font-weight:600;color:var(--ink);line-height:1.45;margin-top:26px;min-height:40px}
+.pr-list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:13px;flex:1;align-content:start}
+.pr-list li{display:flex;align-items:center;gap:11px;font-size:14px;color:#4B5563}
+.pr-ck{flex:none;width:18px;height:18px;border-radius:50%;border:1px solid #E5E7EB;background:#F9FAFB;color:#6B7280;display:inline-flex;align-items:center;justify-content:center}
+.pr-ck svg{width:11px;height:11px}
+.pr-btn{display:flex;align-items:center;justify-content:center;height:40px;margin-top:32px;border-radius:9px;font-size:14px;font-weight:500;background:#fff;border:1px solid #D9DCE3;color:var(--ink)}
+.pr-btn:hover{background:#F9FAFB}
+.pr-pop .pr-btn{background:#2563EB;border-color:#2563EB;color:#fff;box-shadow:0 1px 2px rgba(37,99,235,.25)}
+.pr-pop .pr-btn:hover{background:#1D4ED8}
+.pr-note{text-align:center;font-size:13.5px;color:#6B7280;margin-top:22px}
+@media(max-width:900px){
+  .pr-grid{grid-template-columns:1fr;padding:0 16px}
+  .pr-stage::before{display:none}
+}
 
 /* FAQ */
 .faq{background:#fff;padding:110px 0 0}
@@ -365,6 +577,8 @@ footer .soc a svg.ar{margin-left:auto;width:12px;height:12px;margin-right:24px}
   .hero h1{font-size:44px}
   .hero2 h1{font-size:44px}
   .steps,.feat-grid,.plans{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr}
+  .bt-card{grid-column:auto!important;grid-row:auto!important}
   .step{height:auto}
   .feat{height:auto;min-height:420px}
   .ind.active{grid-template-columns:1fr}
@@ -514,6 +728,7 @@ footer .soc a svg.ar{margin-left:auto;width:12px;height:12px;margin-right:24px}
 </section>
 
 <!-- FEATURES -->
+<!-- FEATURES V1 (equal grid):
 <section class="features" id="features">
   <div class="wrap">
     <span class="eyebrow">All the tools you need</span>
@@ -553,6 +768,183 @@ footer .soc a svg.ar{margin-left:auto;width:12px;height:12px;margin-right:24px}
         <h3>Always Available</h3>
         <p>Nights, weekends, holidays — your AI never misses a call. Your customers always reach someone.</p>
         <img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Availability settings showing 24hrs, Monday to Sunday, holidays, after hours and AI Active Online Now">
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- FEATURES V2 (bento) -->
+<section class="features2" id="features">
+  <div class="wrap">
+    <span class="eyebrow">All the tools you need</span>
+    <h2 class="sec-title">Everything Your Business<br>Needs to Never Miss a Call.</h2>
+    <p class="sec-sub">One AI platform handles it all — so you can focus on running your business.</p>
+    <div class="bento">
+      <div class="bt-card bt-1 bt-c1">
+        <h3>AI Receptionist</h3>
+        <p>Answers every call in a natural, human-sounding voice. Handles FAQs, takes messages, and transfers calls when needed.</p>
+        <div class="bt-ui">
+          <div class="bt-agent">
+            <div class="bt-row"><span>AI agent</span><b><i></i>Online</b></div>
+            <div class="bt-name">Julia</div>
+            <div class="bt-num">+1 681 292 1982
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            </div>
+          </div>
+          <div class="bt-call">
+            <div class="bt-head">
+              <span class="bt-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 2 16 8 22 8"/><line x1="22" x2="16" y1="2" y2="8"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div><b>Incoming call</b><small>Answered by Julia</small></div>
+            </div>
+            <div class="bt-wave" aria-hidden="true">
+              <i style="height:10px;--d:0s"></i><i style="height:18px;--d:-.4s"></i><i style="height:28px;--d:-.9s"></i><i style="height:38px;--d:-1.3s"></i><i style="height:22px;--d:-1.8s"></i><i style="height:42px;--d:-2.2s"></i><i style="height:30px;--d:-.6s"></i><i style="height:16px;--d:-1.5s"></i><i style="height:34px;--d:-2.6s"></i><i style="height:44px;--d:-.2s"></i><i style="height:26px;--d:-1.1s"></i><i style="height:36px;--d:-2s"></i><i style="height:20px;--d:-.8s"></i><i style="height:12px;--d:-1.7s"></i><i style="height:24px;--d:-2.4s"></i><i style="height:14px;--d:-.5s"></i><i style="height:8px;--d:-1.4s"></i>
+            </div>
+            <div class="bt-meta"><span>Speaking with caller</span><span>1:12</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="bt-card bt-2 bt-c3">
+        <h3>Lead Capture</h3>
+        <p>Captures every caller's name, number, and reason for calling, even if they don't book. Nothing falls through the cracks.</p>
+        <div class="bt-ui">
+          <div class="bt-list">
+            <div class="bt-lh"><b>Your leads</b><span class="bt-filter">All<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></div>
+            <div class="bt-item" style="--d:.4s"><div class="bt-date"><b>20</b><small>Fri</small></div><div class="bt-txt"><b>Sarah Miller</b><div class="bt-meta"><span class="bt-tag bt-new">New lead</span><span class="bt-chip">Teeth whitening</span><span class="bt-chip">+1 555 014 2298</span></div></div></div>
+            <div class="bt-item" style="--d:1.6s"><div class="bt-date"><b>19</b><small>Thu</small></div><div class="bt-txt"><b>Daniel Ortiz</b><div class="bt-meta"><span class="bt-tag bt-book">Booked</span><span class="bt-chip">New patient exam</span><span class="bt-chip">+1 555 019 7741</span></div></div></div>
+            <div class="bt-item" style="--d:2.8s"><div class="bt-date"><b>18</b><small>Wed</small></div><div class="bt-txt"><b>Priya Shah</b><div class="bt-meta"><span class="bt-tag bt-fu">Follow up</span><span class="bt-chip">Insurance question</span><span class="bt-chip">+1 555 013 6620</span></div></div></div>
+            <div class="bt-item" style="--d:4s"><div class="bt-date"><b>17</b><small>Tue</small></div><div class="bt-txt"><b>Marcus Lee</b><div class="bt-meta"><span class="bt-tag bt-new">New lead</span><span class="bt-chip">Cleaning</span><span class="bt-chip">+1 555 016 8853</span></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bt-card bt-3 bt-c2">
+        <h3>Appointment booking</h3>
+        <p>Books straight into your Google Calendar, checks availability in real time, and texts a confirmation.</p>
+        <div class="bt-ui">
+          <div class="bt-cal">
+            <div class="bt-bar">
+              <div class="bt-sync"><i class="bt-tog"></i>Google Calendar</div>
+              <div class="bt-seg"><span class="on">12h</span><span>24h</span></div>
+            </div>
+            <div class="bt-days"><div>Tue 07</div><div>Wed 08</div><div>Thu 09</div></div>
+            <div class="bt-body">
+              <div class="bt-col">
+                <div class="bt-ev bt-blue" style="--t:8px;--h:48px;--d:.3s">Cleaning<span>9–10 AM</span></div>
+                <div class="bt-ev bt-gray" style="--t:70px;--h:48px;--d:1.6s">Consultation<span>11 AM–12 PM</span></div>
+              </div>
+              <div class="bt-col">
+                <div class="bt-ev bt-green" style="--t:26px;--h:54px;--d:2.9s">Checkup<span>10–11 AM</span></div>
+                <div class="bt-ev bt-blue" style="--t:96px;--h:54px;--d:4.2s">Whitening<span>1–2:30 PM</span></div>
+              </div>
+              <div class="bt-col">
+                <div class="bt-ev bt-gray" style="--t:10px;--h:46px;--d:5.5s">Follow-up<span>9–9:30 AM</span></div>
+                <div class="bt-ev bt-blue" style="--t:66px;--h:80px;--d:6.8s">New patient<span>11 AM–1 PM</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bt-card bt-4 bt-c5">
+        <h3>Call transcripts and analytics</h3>
+        <p>Full transcripts and recordings for every call. See your peak hours, booking rate, and call outcomes at a glance.</p>
+        <div class="bt-ui">
+          <div class="bt-tx">
+            <div class="bt-th">
+              <div class="bt-who">
+                <span class="bt-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                <div><b>Sarah Miller</b><small>+1 555 014 2298</small></div>
+              </div>
+              <span class="bt-dur"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>1:32</span>
+            </div>
+            <div class="bt-msgs">
+              <div class="bt-row bt-caller" style="--d:.4s"><div class="bt-b">Hi, do you have anything this week for a whitening?</div></div>
+              <div class="bt-row bt-ai" style="--d:1.6s"><span class="bt-av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><div class="bt-b">Yes! Tuesday at 10 AM or Thursday at 2 PM. Which works for you?</div></div>
+              <div class="bt-row bt-caller" style="--d:2.8s"><div class="bt-b">Tuesday please.</div></div>
+              <div class="bt-row bt-ai" style="--d:4s"><span class="bt-av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><div class="bt-b">Booked! You'll get a text confirmation shortly.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bt-card bt-5 bt-c4">
+        <h3>Knowledge Base</h3>
+        <p>Teach your AI about your services, policies, and FAQs. It answers questions exactly the way you would.</p>
+        <div class="bt-ui">
+          <div class="bt-kb">
+            <div class="bt-top">
+              <div class="bt-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Search entries…</div>
+              <span class="bt-count">12 entries</span>
+            </div>
+            <div class="bt-q" style="--d:.4s">
+              <div class="bt-qh">
+                <span class="bt-tile" style="background:#EFF4FF;color:#2563EB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+                <b>Where are you located?</b>
+                <span class="bt-tag" style="background:#E6EEFF;color:#1E4FBF">FAQ</span>
+                <svg class="bt-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+              </div>
+              <div class="bt-ans">We're at 12 Main Street, next to the pharmacy. Free parking is behind the building.</div>
+            </div>
+            <div class="bt-q" style="--d:1.6s">
+              <div class="bt-qh">
+                <span class="bt-tile" style="background:#F1EEFE;color:#6D4FD8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
+                <b>Cancellation policy</b>
+                <span class="bt-tag" style="background:#EFEAFD;color:#5B3FC0">Policy</span>
+                <svg class="bt-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+            <div class="bt-q" style="--d:2.4s">
+              <div class="bt-qh">
+                <span class="bt-tile" style="background:#F3F4F6;color:#6B7280"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
+                <b>Do you take my insurance?</b>
+                <span class="bt-tag" style="background:#E6EEFF;color:#1E4FBF">FAQ</span>
+                <svg class="bt-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bt-card bt-6 bt-c6">
+        <h3>Always available</h3>
+        <p>Nights, weekends, holidays. Your AI never misses a call, and your customers always reach someone.</p>
+        <div class="bt-panel">
+          <div class="bt-hd">
+            <div class="bt-big"><span style="color:var(--ink)">24</span><span>/7</span></div>
+            <div class="bt-hr">
+              <div class="bt-segs" aria-hidden="true"><span class="on">Nights</span><span>Weekends</span><span>Holidays</span></div>
+              <div class="bt-legend"><span><i></i>Answered by AI</span><span><i></i>Covered</span></div>
+            </div>
+          </div>
+          <div class="bt-chart">
+            <div class="bt-gl" style="top:6px"></div><div class="bt-gl" style="top:34px"></div><div class="bt-gl" style="top:62px"></div><div class="bt-gl" style="top:90px"></div>
+            <span class="bt-yl" style="top:6px">Busy</span><span class="bt-yl" style="top:62px">Quiet</span>
+            <div class="bt-bars" aria-hidden="true">
+              <div class="bt-b" style="height:62%;--i:0"></div>
+              <div class="bt-b" style="height:48%;--i:1"></div>
+              <div class="bt-b bt-lit" style="height:70%;--i:2"><span class="bt-dot"></span><span class="bt-tip">2:14 AM · Call answered</span></div>
+              <div class="bt-b" style="height:44%;--i:3"></div>
+              <div class="bt-b" style="height:58%;--i:4"></div>
+              <div class="bt-b" style="height:66%;--i:5"></div>
+              <div class="bt-b" style="height:52%;--i:6"></div>
+              <div class="bt-b" style="height:76%;--i:7"></div>
+              <div class="bt-b" style="height:64%;--i:8"></div>
+              <div class="bt-b" style="height:84%;--i:9"></div>
+              <div class="bt-b" style="height:72%;--i:10"></div>
+              <div class="bt-b" style="height:90%;--i:11"></div>
+              <div class="bt-b" style="height:78%;--i:12"></div>
+              <div class="bt-b" style="height:68%;--i:13"></div>
+              <div class="bt-b" style="height:86%;--i:14"></div>
+              <div class="bt-b" style="height:74%;--i:15"></div>
+              <div class="bt-b" style="height:60%;--i:16"></div>
+              <div class="bt-b" style="height:80%;--i:17"></div>
+              <div class="bt-b" style="height:66%;--i:18"></div>
+              <div class="bt-b" style="height:72%;--i:19"></div>
+              <div class="bt-b" style="height:56%;--i:20"></div>
+              <div class="bt-b" style="height:64%;--i:21"></div>
+              <div class="bt-b" style="height:50%;--i:22"></div>
+              <div class="bt-b" style="height:58%;--i:23"></div>
+            </div>
+          </div>
+          <div class="bt-xl" aria-hidden="true"><span>12 AM</span><span>3 AM</span><span>6 AM</span><span>9 AM</span><span>12 PM</span><span>3 PM</span><span>6 PM</span><span>9 PM</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -658,7 +1050,7 @@ footer .soc a svg.ar{margin-left:auto;width:12px;height:12px;margin-right:24px}
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING V1 (designer's, 272px tops):
 <section class="pricing" id="pricing">
   <div class="wrap">
     <span class="eyebrow" style="text-transform:none">Pricing</span>
@@ -673,17 +1065,17 @@ footer .soc a svg.ar{margin-left:auto;width:12px;height:12px;margin-right:24px}
           <div style="height:22px"></div>
         </div>
         <p class="plan-desc">Perfect for small businesses just getting started.</p>
-        <a href="#" class="btn">Get Started</a>
+        <a href="#" class="btn">Start free trial</a>
         <ul><li>100 call minutes</li><li>200 SMS</li><li>AI receptionist</li><li>Call transcripts</li><li>Lead capture</li><li>Google Calendar sync</li></ul>
       </div>
       <div class="plan pop">
         <div class="top">
-          <div class="plan-head"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Professional</span><strong>(Most Popular)</strong></div>
+          <div class="plan-head"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Professional</span><span class="pop-pill">Most popular</span></div>
           <div class="price"><span>$99</span><small>/month</small></div>
           <div style="height:22px"></div>
         </div>
         <p class="plan-desc">For growing businesses that need more power.</p>
-        <a href="#" class="btn">Get Started</a>
+        <a href="#" class="btn">Start free trial</a>
         <ul><li>500 call minutes</li><li>1,000 SMS</li><li>Everything in Starter</li><li>Priority support</li><li>Advanced analytics</li></ul>
       </div>
       <div class="plan">
@@ -693,11 +1085,70 @@ footer .soc a svg.ar{margin-left:auto;width:12px;height:12px;margin-right:24px}
           <div style="height:22px"></div>
         </div>
         <p class="plan-desc">For multi-location businesses and high call volume.</p>
-        <a href="#" class="btn">Get Started</a>
+        <a href="#" class="btn">Start free trial</a>
         <ul><li>2,000 call minutes</li><li>5,000 SMS</li><li>Everything in Professional</li><li>Dedicated onboarding</li><li>Custom AI training</li></ul>
       </div>
     </div>
     <p class="plan-note">All plans include a 7-day free trial. Cancel anytime. No long-term contracts.</p>
+  </div>
+</section>
+-->
+<!-- PRICING V2 -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="pr-head"><span class="pr-pill"><i></i>Pricing</span></div>
+    <h2 class="sec-title">Simple, transparent pricing</h2>
+    <p class="pr-sub">Every plan includes a 7-day free trial.</p>
+    <div class="pr-stage">
+      <span class="pr-x tl" aria-hidden="true"></span><span class="pr-x tr" aria-hidden="true"></span><span class="pr-x bl" aria-hidden="true"></span><span class="pr-x br" aria-hidden="true"></span>
+      <!-- TODO before launch: verify limits and the four unconfirmed features (Priority support, Advanced analytics, Dedicated onboarding, Custom AI training) against the app -->
+      <div class="pr-grid">
+      <div class="pr-plan">
+        <div class="pr-name">Starter</div>
+        <div class="pr-price">$49</div>
+        <div class="pr-per">per month</div>
+        <p class="pr-desc">Perfect for small businesses just getting started.</p>
+        <ul class="pr-list">
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>100 call minutes</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>200 SMS</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>AI receptionist</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Call transcripts</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Lead capture</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Google Calendar sync</li>
+        </ul>
+        <a href="#" class="pr-btn">Start free trial</a>
+      </div>
+      <div class="pr-plan pr-pop">
+        <div class="pr-name">Professional<span class="pr-tag">Most popular</span></div>
+        <div class="pr-price">$99</div>
+        <div class="pr-per">per month</div>
+        <p class="pr-desc">For growing businesses that need more power.</p>
+        <ul class="pr-list">
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>500 call minutes</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>1,000 SMS</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Everything in Starter</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Priority support</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Advanced analytics</li>
+        </ul>
+        <a href="#" class="pr-btn">Start free trial</a>
+      </div>
+      <div class="pr-plan">
+        <div class="pr-name">Enterprise</div>
+        <div class="pr-price">$199</div>
+        <div class="pr-per">per month</div>
+        <p class="pr-desc">For multi-location businesses and high call volume.</p>
+        <ul class="pr-list">
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>2,000 call minutes</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>5,000 SMS</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Everything in Professional</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Dedicated onboarding</li>
+          <li><span class="pr-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Custom AI training</li>
+        </ul>
+        <a href="#" class="pr-btn">Start free trial</a>
+      </div>
+      </div>
+    </div>
+    <p class="pr-note">All plans include a 7-day free trial. Cancel anytime. No long-term contracts.</p>
   </div>
 </section>
 
@@ -775,6 +1226,16 @@ document.querySelectorAll('.qa button').forEach(function(b){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('play');io.unobserve(e.target)}});
   },{threshold:.35});
   steps.forEach(function(s){io.observe(s)});
+})();
+(function(){
+  var cs=document.querySelectorAll('.bt-c2,.bt-c3,.bt-c4,.bt-c5,.bt-c6');
+  if(!('IntersectionObserver' in window)){cs.forEach(function(c){c.classList.add('bt-in')});return}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('bt-in');io.unobserve(e.target)}
+    });
+  },{threshold:.35});
+  cs.forEach(function(c){io.observe(c)});
 })();
 </script>
 </body>
