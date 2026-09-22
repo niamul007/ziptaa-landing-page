@@ -52,7 +52,7 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);font-weight:700}
   -webkit-mask-image:linear-gradient(to top,black 0%,transparent 65%);
   mask-image:linear-gradient(to top,black 0%,transparent 65%)}
 nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.08);height:70px;padding:0}
-nav .wrap{display:flex;align-items:center;height:70px}
+nav .wrap{display:flex;align-items:center;height:70px;max-width:1350px}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:700;font-size:24px;color:var(--ink)}
 .logo{width:36px;height:36px;border-radius:8px;background:var(--blue);display:grid;place-items:center}
 .logo svg{width:20px;height:20px}
@@ -80,7 +80,8 @@ nav .wrap{display:flex;align-items:center;height:70px}
 .hero2 h1 span{color:#2563EB}
 .hero2 p{font-size:18px;line-height:1.6;color:#6b7280;margin:24px auto 0;max-width:520px}
 .hero2 .cta{display:flex;justify-content:center;gap:12px;margin-top:32px}
-.hero2-frame{margin-top:40px;width:100%;background:#0b0b0d;border-radius:20px;padding:14px}
+.hero2-frame-wrap{max-width:1350px;margin:40px auto 0;padding:0 16px}
+.hero2-frame{width:100%;background:#0b0b0d;border-radius:20px;padding:14px}
 .hero2-frame img{width:100%;aspect-ratio:16/9;border-radius:10px;object-fit:cover}
 
 /* HERO V1 */
@@ -562,7 +563,7 @@ footer{background:linear-gradient(180deg,#FFFFFF 0%,#F2F6FF 100%);border-top:1px
 footer::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background:linear-gradient(to top,rgba(37,99,235,.12) 0%,rgba(37,99,235,0) 60%),repeating-linear-gradient(90deg,rgba(37,99,235,.09) 0 1px,transparent 1px 10px);
   -webkit-mask-image:linear-gradient(to top,black 0%,transparent 70%);mask-image:linear-gradient(to top,black 0%,transparent 70%)}
-footer .top{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:72px 16px 88px;display:grid;grid-template-columns:1fr 196px 196px 170px}
+footer .top{position:relative;z-index:1;max-width:1350px;margin:0 auto;padding:72px 16px 88px;display:grid;grid-template-columns:1fr 196px 196px 170px}
 footer .col a.f-cta{color:var(--blue);font-weight:500}
 .f-brand .brand{color:var(--ink);font-size:22px}
 .f-brand .logo{width:32px;height:32px}
@@ -573,7 +574,7 @@ footer .col a:hover{color:var(--ink)}
 footer .soc a{display:flex;align-items:center;gap:8px;font-size:14px;line-height:36px;color:var(--ink)}
 footer .soc a svg{width:18px;height:18px}
 .f-bottom{position:relative;z-index:1;border-top:1px solid #E5E7EB}
-.f-bottom .in{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;padding:24px 16px 20px;font-size:14px;color:#6B7280}
+.f-bottom .in{max-width:1350px;margin:0 auto;display:flex;justify-content:space-between;padding:24px 16px 20px;font-size:14px;color:#6B7280}
 .f-links{display:flex;gap:14px}
 .f-links a{padding-right:14px;border-right:1px solid #94A3B8;line-height:1}
 .f-links a:last-child{border:0;padding:0}
@@ -638,7 +639,6 @@ footer .soc a svg{width:18px;height:18px}
 </head>
 <body>
 
-<div class="top-container">
 <!-- NAV -->
 <nav>
   <div class="wrap">
@@ -658,6 +658,7 @@ footer .soc a svg{width:18px;height:18px}
   </div>
 </nav>
 
+<div class="top-container">
 <!-- HERO V2 left-aligned -->
 <header class="hero2">
   <div class="hero2-inner">
@@ -668,6 +669,8 @@ footer .soc a svg{width:18px;height:18px}
       <a href="#how" class="btn btn-outline">See how it works</a>
       <a href="#" class="btn btn-primary">Start your free trial</a>
     </div>
+  </div>
+  <div class="hero2-frame-wrap">
     <div class="hero2-frame">
       <img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Ziptaa dashboard showing Good morning greeting, 24 calls today, 18 appointments booked, 6 new leads, AI status active, a weekly calls line chart and a recent calls table">
     </div>
