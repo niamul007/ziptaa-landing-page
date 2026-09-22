@@ -486,6 +486,8 @@ END STEPPER V1 old card 2 css */
 
 /* INDUSTRIES */
 .industries{background:#fff;padding-top:130px}
+.industries .pr-head,.industries .sec-title,.industries .sec-sub{text-align:left}
+.industries .sec-sub{margin-left:0;margin-right:0}
 .tabs{display:flex;width:max-content;margin:40px auto 0;background:#fff;border-radius:6px;box-shadow:0 2px 10px rgba(15,23,42,.12);overflow:hidden;max-width:100%;flex-wrap:wrap;justify-content:center}
 .tab{display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border:0;border-right:1px solid var(--border);background:#fff;font-size:15px;font-weight:500;color:var(--ink)}
 .tab:last-child{border-right:0}
@@ -505,6 +507,41 @@ END STEPPER V1 old card 2 css */
 .bub{width:353px;max-width:100%;background:rgba(255,255,255,.14);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:14px 16px;color:#fff;font-size:14px}
 .bub small{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin-bottom:6px;font-weight:600}
 .bub.ai{align-self:flex-end}
+
+/* INDUSTRIES V2 (list + step-flow) */
+.ind-wrap{display:grid;grid-template-columns:200px 1fr;gap:56px;margin-top:64px;align-items:start}
+.ind-list{list-style:none;display:flex;flex-direction:column;gap:22px}
+.ind-item{width:100%;font-size:16px;font-weight:500;color:var(--muted);cursor:pointer;padding-bottom:22px;border-bottom:1px solid transparent}
+.ind-item:not(:last-child){border-bottom-color:var(--border)}
+.ind-item.active{font-weight:700;color:var(--ink);border-bottom-color:#93B4F5}
+.ind{display:none;border-radius:20px;padding:36px;margin-top:0;background:linear-gradient(135deg,#fff 0%,#EFF4FF 100%)}
+.ind.active{display:block}
+.ind h3{font-family:var(--head);font-size:22px;font-weight:500;margin:0 0 8px;line-height:1.3}
+.ind p{font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.5}
+.istep{display:flex;align-items:center;gap:14px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 1px 2px rgba(15,23,42,.04);width:fit-content;max-width:100%}
+.istep-ic{flex:none;width:30px;height:30px;border-radius:50%;background:#EFF4FF;display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.istep-ic svg{width:16px;height:16px}
+.istep-ic.done{background:#DCF5E6;color:#166534}
+.istep-text{font-size:14px;color:var(--ink)}
+.istep-line{width:1px;height:14px;background:var(--border);margin-left:33px}
+.istep-in{opacity:0;transform:translateY(8px);animation:istepIn .5s ease forwards}
+@keyframes istepIn{to{opacity:1;transform:none}}
+.ichat{height:180px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:8px 4px}
+.ichat-msg{max-width:78%;padding:9px 13px;border-radius:14px;font-size:12.5px;line-height:1.45}
+.ichat-msg.caller{background:#EAF3FF;color:#1D6FD1;border-bottom-left-radius:5px}
+.ichat-msg.ai{background:#F1F3F5;color:#1F2937;border-bottom-right-radius:5px}
+.ichat-msg.leaving{opacity:0;transform:translateY(-12px);transition:all .4s ease}
+.ichat-msg.entering{animation:ichatIn .4s ease forwards}
+@keyframes ichatIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ichat-msg-row{display:flex;align-items:flex-end;gap:8px}
+.ichat-msg-row.caller{flex-direction:row;align-self:flex-start}
+.ichat-msg-row.ai{flex-direction:row-reverse;align-self:flex-end}
+.ichat-msg-row.leaving{opacity:0;transform:translateY(-12px);max-height:0;margin:0;transition:opacity .6s ease, transform .6s ease, max-height .6s ease .1s, margin .6s ease .1s;overflow:hidden}
+.ichat-av{width:24px;height:24px;border-radius:50%;flex:none}
+.ichat-av.ai{background:linear-gradient(140deg,#7DB4FF 0%,#2563EB 65%,#1D4ED8 100%);box-shadow:0 2px 6px rgba(37,99,235,.3);display:grid;place-items:center}
+.ichat-av.ai svg{width:12px;height:12px}
+.ichat-av.caller{background:#F3F4F6;color:#6B7280;display:grid;place-items:center}
+.ichat-av.caller svg{width:12px;height:12px}
 
 /* PRICING V1 css:
 .pricing{background:#fff;padding:250px 0 120px}
@@ -620,6 +657,7 @@ footer .soc a svg{width:18px;height:18px}
   .feat{height:auto;min-height:420px}
   .ind.active{grid-template-columns:1fr}
   .ind-photo{height:420px}
+  .ind-wrap{grid-template-columns:1fr}
   .faq .wrap{grid-template-columns:1fr}
   .faq-l .btn{margin-top:24px}
   footer .top{grid-template-columns:1fr 1fr;gap:40px}
@@ -1038,7 +1076,7 @@ footer .soc a svg{width:18px;height:18px}
 </section>
 
 <!-- DEMO CALL -->
-<section class="demo frame-sec" id="demo">
+<section class="demo frame-sec tex-ticks" id="demo">
   <div class="wrap">
     <div class="demo-l">
       <span class="pr-pill"><i></i>Live demo</span>
@@ -1075,95 +1113,46 @@ footer .soc a svg{width:18px;height:18px}
     <h2 class="sec-title">Built for your industry.<br>Ready in minutes.</h2>
     <p class="sec-sub" style="color:var(--body);max-width:470px">Ziptaa works out of the box for the most common US service businesses.</p>
 
-    <div class="tabs" role="tablist">
-      <button class="tab active" data-t="dental"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3"/><path d="M9 13v2a5 5 0 0 0 10 0v-1"/><circle cx="19" cy="12" r="2"/></svg>Dental</button>
-      <button class="tab" data-t="salon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg>Salon &amp; Spa</button>
-      <button class="tab" data-t="clean"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg>Home Cleaning</button>
-      <button class="tab" data-t="hvac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h7"/></svg>HVAC</button>
-      <button class="tab" data-t="re"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 21V4h11v17M15 9h5v12M8 8h3M8 12h3M8 16h3M2 21h20"/></svg>Real Estate</button>
-    </div>
+    <div class="ind-wrap">
+      <ul class="ind-list" role="tablist">
+        <li class="ind-item active" data-t="dental">Dental</li>
+        <li class="ind-item" data-t="salon">Salon &amp; Spa</li>
+        <li class="ind-item" data-t="home">Home Services</li>
+        <li class="ind-item" data-t="contractors">Contractors</li>
+        <li class="ind-item" data-t="re">Real Estate</li>
+      </ul>
 
-    <div class="ind active" data-p="dental">
-      <div>
-        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a4 4 0 0 0 8 0V3"/><path d="M9 13v2a5 5 0 0 0 10 0v-1"/><circle cx="19" cy="12" r="2"/></svg>Dental Clinics</span>
-        <h3>Perfect for dental clinics that can’t afford missed calls.</h3>
-        <ul class="checks">
-          <li>Books checkups, cleanings and consultations automatically</li>
-          <li>Answers insurance and pricing questions instantly</li>
-          <li>Sends SMS appointment confirmations to every patient</li>
-          <li>Handles after-hours and weekend calls automatically</li>
-        </ul>
-        <a href="#" class="btn btn-outline">Start Free for Dental <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="ind-photo">
-        <img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Modern dental clinic treatment room at dusk with a dental chair and city view">
-        <div class="bubbles">
-          <div class="bub"><small>Sarah M.</small>Hi, do you have any openings this week?</div>
-          <div class="bub ai"><small>Ziptaa AI</small>Yes! Tuesday 10am or Thursday 2pm available. Which works for you?</div>
-          <div class="bub"><small>Sarah M.</small>Tuesday please!</div>
-          <div class="bub ai"><small>Ziptaa AI</small>Booked! You'll get an SMS confirmation shortly.</div>
+      <div class="ind-panel">
+        <div class="ind active" data-p="dental">
+          <h3>Never miss a booking again.</h3>
+          <p>Patients call about pain, pricing, and openings at all hours. Ziptaa answers every time and gets them on the schedule.</p>
+          <div class="ichat" id="ichat-dental"></div>
+        </div>
+
+        <div class="ind" data-p="salon">
+          <h3>Booked solid, never fully booked.</h3>
+          <p>Your stylists can't leave a client mid-cut to grab the phone. Ziptaa keeps the chair full without ever picking up mid-appointment.</p>
+          <div class="ichat" id="ichat-salon"></div>
+        </div>
+
+        <div class="ind" data-p="home">
+          <h3>Emergencies don't wait for office hours.</h3>
+          <p>A burst pipe at 2am can't leave a voicemail. Ziptaa triages the call and gets the right person moving.</p>
+          <div class="ichat" id="ichat-home"></div>
+        </div>
+
+        <div class="ind" data-p="contractors">
+          <h3>Every estimate starts with the right questions.</h3>
+          <p>Not every caller knows what they need yet. Ziptaa asks the right questions to scope the job before you even call back.</p>
+          <div class="ichat" id="ichat-contractors"></div>
+        </div>
+
+        <div class="ind" data-p="re">
+          <h3>Some calls come with a curveball.</h3>
+          <p>Buyers change their mind mid-conversation. Ziptaa keeps up and still gets the showing booked.</p>
+          <div class="ichat" id="ichat-re"></div>
         </div>
       </div>
-    </div>
-
-    <div class="ind" data-p="salon">
-      <div>
-        <span class="pill">Salon &amp; Spa</span>
-        <h3>Perfect for salons and spas that are too busy to pick up.</h3>
-        <ul class="checks">
-          <li>Books haircuts, treatments and massages automatically</li>
-          <li>Answers service and pricing questions instantly</li>
-          <li>Sends SMS reminders that cut down no-shows</li>
-          <li>Takes bookings after hours and on weekends</li>
-        </ul>
-        <a href="#" class="btn btn-outline">Start Free for Salons <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="ind-photo"><img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Bright modern hair salon interior with styling chairs and mirrors"></div>
-    </div>
-
-    <div class="ind" data-p="clean">
-      <div>
-        <span class="pill">Home Cleaning</span>
-        <h3>Perfect for cleaning crews that are always on the job.</h3>
-        <ul class="checks">
-          <li>Captures quote requests and addresses on every call</li>
-          <li>Books one-time and recurring cleanings</li>
-          <li>Answers questions about services and pricing</li>
-          <li>Never misses a lead while your team is on site</li>
-        </ul>
-        <a href="#" class="btn btn-outline">Start Free for Cleaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="ind-photo"><img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Cleaner wiping a sunlit kitchen counter in a tidy home"></div>
-    </div>
-
-    <div class="ind" data-p="hvac">
-      <div>
-        <span class="pill">HVAC</span>
-        <h3>Perfect for HVAC teams that can’t stop for every ring.</h3>
-        <ul class="checks">
-          <li>Captures emergency repair requests around the clock</li>
-          <li>Books service visits and maintenance appointments</li>
-          <li>Collects address, issue and urgency up front</li>
-          <li>Notifies you instantly about urgent calls</li>
-        </ul>
-        <a href="#" class="btn btn-outline">Start Free for HVAC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="ind-photo"><img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="HVAC technician servicing an outdoor air conditioning unit"></div>
-    </div>
-
-    <div class="ind" data-p="re">
-      <div>
-        <span class="pill">Real Estate</span>
-        <h3>Perfect for agents who are always out showing homes.</h3>
-        <ul class="checks">
-          <li>Answers listing questions on every call</li>
-          <li>Books showings straight into your calendar</li>
-          <li>Captures buyer and seller details instantly</li>
-          <li>Follows up with SMS confirmations</li>
-        </ul>
-        <a href="#" class="btn btn-outline">Start Free for Real Estate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="ind-photo"><img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Bright living room of a home listed for sale with a for-sale sign outside"></div>
     </div>
   </div>
 </section>
@@ -1277,7 +1266,7 @@ footer .soc a svg{width:18px;height:18px}
       <span class="pr-pill"><i></i>FAQ</span>
       <h2>Everything You Need to Know.</h2>
       <p>Still have questions? We're here to help.</p>
-      <a href="#" class="btn btn-primary">Contact Us</a>
+      <a href="mailto:support@ziptaa.com" class="btn btn-primary">Contact Us</a>
     </div>
     <div class="faq-list">
       <div class="qa open"><button>What is Ziptaa and how does it work?</button><div class="a">Ziptaa is an AI-powered receptionist that answers every inbound call to your business — 24 hours a day, 7 days a week. It books appointments, captures leads, and answers customer questions automatically using your custom knowledge base.</div></div>
@@ -1310,9 +1299,10 @@ footer .soc a svg{width:18px;height:18px}
     <div class="f-brand">
       <a href="#" class="brand"><img src="ziptaa_logo.png" alt="Ziptaa" style="height:28px;width:auto">Ziptaa</a>
       <p>The AI receptionist built for US small businesses.</p>
+      <a href="mailto:support@ziptaa.com" style="display:block;margin-top:12px;color:#4B5563;font-size:14px">support@ziptaa.com</a>
     </div>
     <div class="col" style="grid-column:2"><h4>Product</h4><a href="#features">Features</a><a href="#how">How It Works</a><a href="#pricing">Pricing</a><a href="#industries">Industries</a><a href="#" class="f-cta">Start free trial</a></div>
-    <div class="col"><h4>Company</h4><a href="#">Contact</a></div>
+    <div class="col"><h4>Company</h4><a href="mailto:support@ziptaa.com">Contact</a></div>
     <div class="col soc"><h4>Social</h4>
       <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.5h3.3l-7.2 8.3 8.5 11.2h-6.6l-5.2-6.8-6 6.8H1.7l7.7-8.8L1.3 2.5H8l4.7 6.200zm-1.2 17.500h1.800L7 4.400H5z"/></svg>X</a>
       <a href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="currentColor"/><path d="M6.5 10h2.5v8H6.5zM7.7 6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM11 10h2.4v1.1c.4-.7 1.3-1.3 2.5-1.3 2.500 0 3 1.6 3 3.8V18h-2.5v-3.9c0-.9 0-2.100-1.300-2.100s-1.500 1-1.500 2V18H11z" fill="#fff"/></svg>LinkedIn</a>
@@ -1332,8 +1322,311 @@ document.querySelectorAll('.tab').forEach(function(t){
     document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
     document.querySelectorAll('.ind').forEach(function(x){x.classList.toggle('active',x.dataset.p===t.dataset.t)});
     t.classList.add('active');
+    if(t.dataset.t==='dental') restartDentalChat();
+    else if(t.dataset.t==='salon') restartSalonChat();
+    else if(t.dataset.t==='home') restartHomeChat();
+    else if(t.dataset.t==='contractors') restartContractorsChat();
+    else if(t.dataset.t==='re') restartReChat();
   });
 });
+document.querySelectorAll('.ind-item').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.ind-item').forEach(function(x){x.classList.remove('active')});
+    document.querySelectorAll('.ind').forEach(function(x){x.classList.toggle('active',x.dataset.p===t.dataset.t)});
+    t.classList.add('active');
+    if(t.dataset.t==='dental') restartDentalChat();
+    else if(t.dataset.t==='salon') restartSalonChat();
+    else if(t.dataset.t==='home') restartHomeChat();
+    else if(t.dataset.t==='contractors') restartContractorsChat();
+    else if(t.dataset.t==='re') restartReChat();
+  });
+});
+var dentalChatTimeout=null;
+function playDentalChat(){
+  clearTimeout(dentalChatTimeout);
+  var box=document.getElementById('ichat-dental');
+  if(!box) return;
+  var script=[
+    {side:'ai',text:"Thanks for calling Bright Smile Dental, this is Julia. How can I help?"},
+    {side:'caller',text:"Hey, I've got a toothache — do you have anything open soon?"},
+    {side:'ai',text:"I do — 8am tomorrow just opened up. Want me to book that?"},
+    {side:'caller',text:"Yes, please!"},
+    {side:'ai',text:"You're all set. I'll text you a confirmation."}
+  ];
+  var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
+  var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+  var i=0;
+  function step(){
+    var msg=script[i];
+    var row=document.createElement('div');
+    row.className='ichat-msg-row '+msg.side;
+    var av=document.createElement('span');
+    av.className='ichat-av '+msg.side;
+    av.innerHTML=msg.side==='ai'?aiAvSvg:callerAvSvg;
+    var el=document.createElement('div');
+    el.className='ichat-msg '+msg.side+' entering';
+    el.textContent=msg.text;
+    row.appendChild(av);
+    row.appendChild(el);
+    box.appendChild(row);
+    var rows=box.querySelectorAll('.ichat-msg-row:not(.leaving)');
+    if(rows.length>3){
+      var oldest=rows[0];
+      oldest.style.maxHeight=oldest.offsetHeight+'px';
+      oldest.offsetHeight;
+      oldest.classList.add('leaving');
+      oldest.addEventListener('transitionend',function(){
+        if(oldest.parentNode) oldest.parentNode.removeChild(oldest);
+      });
+    }
+    i++;
+    if(i<script.length){
+      dentalChatTimeout=setTimeout(step,1800);
+    }else{
+      dentalChatTimeout=setTimeout(function(){
+        box.innerHTML='';
+        i=0;
+        step();
+      },2500);
+    }
+  }
+  step();
+}
+function restartDentalChat(){
+  clearTimeout(dentalChatTimeout);
+  var box=document.getElementById('ichat-dental');
+  if(box) box.innerHTML='';
+  playDentalChat();
+}
+playDentalChat();
+var salonChatTimeout=null;
+function playSalonChat(){
+  clearTimeout(salonChatTimeout);
+  var box=document.getElementById('ichat-salon');
+  if(!box) return;
+  var script=[
+    {side:'ai',text:"Thanks for calling Glow Studio, this is Ava speaking."},
+    {side:'caller',text:"Hi, I need a color appointment but I'm only free after 6pm."},
+    {side:'ai',text:"Let me check evening slots... Thursday at 6:30 works. Same stylist as last time?"},
+    {side:'caller',text:"Oh — you know who did my color before?"},
+    {side:'ai',text:"I do, it's in your file. Locking that in now — see you Thursday!"}
+  ];
+  var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
+  var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+  var i=0;
+  function step(){
+    var msg=script[i];
+    var row=document.createElement('div');
+    row.className='ichat-msg-row '+msg.side;
+    var av=document.createElement('span');
+    av.className='ichat-av '+msg.side;
+    av.innerHTML=msg.side==='ai'?aiAvSvg:callerAvSvg;
+    var el=document.createElement('div');
+    el.className='ichat-msg '+msg.side+' entering';
+    el.textContent=msg.text;
+    row.appendChild(av);
+    row.appendChild(el);
+    box.appendChild(row);
+    var rows=box.querySelectorAll('.ichat-msg-row:not(.leaving)');
+    if(rows.length>3){
+      var oldest=rows[0];
+      oldest.style.maxHeight=oldest.offsetHeight+'px';
+      oldest.offsetHeight;
+      oldest.classList.add('leaving');
+      oldest.addEventListener('transitionend',function(){
+        if(oldest.parentNode) oldest.parentNode.removeChild(oldest);
+      });
+    }
+    i++;
+    if(i<script.length){
+      salonChatTimeout=setTimeout(step,1800);
+    }else{
+      salonChatTimeout=setTimeout(function(){
+        box.innerHTML='';
+        i=0;
+        step();
+      },2500);
+    }
+  }
+  step();
+}
+function restartSalonChat(){
+  clearTimeout(salonChatTimeout);
+  var box=document.getElementById('ichat-salon');
+  if(box) box.innerHTML='';
+  playSalonChat();
+}
+var homeChatTimeout=null;
+function playHomeChat(){
+  clearTimeout(homeChatTimeout);
+  var box=document.getElementById('ichat-home');
+  if(!box) return;
+  var script=[
+    {side:'ai',text:"Rapid Home Solutions, this is Alex — what's going on?"},
+    {side:'caller',text:"My basement's flooding, I need someone now!"},
+    {side:'ai',text:"Understood — I'm flagging this as urgent. Can you give me your address?"},
+    {side:'caller',text:"412 Birchwood Lane."},
+    {side:'ai',text:"Got it. Dispatching our on-call tech now, they'll call you in 10 minutes."}
+  ];
+  var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
+  var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+  var i=0;
+  function step(){
+    var msg=script[i];
+    var row=document.createElement('div');
+    row.className='ichat-msg-row '+msg.side;
+    var av=document.createElement('span');
+    av.className='ichat-av '+msg.side;
+    av.innerHTML=msg.side==='ai'?aiAvSvg:callerAvSvg;
+    var el=document.createElement('div');
+    el.className='ichat-msg '+msg.side+' entering';
+    el.textContent=msg.text;
+    row.appendChild(av);
+    row.appendChild(el);
+    box.appendChild(row);
+    var rows=box.querySelectorAll('.ichat-msg-row:not(.leaving)');
+    if(rows.length>3){
+      var oldest=rows[0];
+      oldest.style.maxHeight=oldest.offsetHeight+'px';
+      oldest.offsetHeight;
+      oldest.classList.add('leaving');
+      oldest.addEventListener('transitionend',function(){
+        if(oldest.parentNode) oldest.parentNode.removeChild(oldest);
+      });
+    }
+    i++;
+    if(i<script.length){
+      homeChatTimeout=setTimeout(step,1800);
+    }else{
+      homeChatTimeout=setTimeout(function(){
+        box.innerHTML='';
+        i=0;
+        step();
+      },2500);
+    }
+  }
+  step();
+}
+function restartHomeChat(){
+  clearTimeout(homeChatTimeout);
+  var box=document.getElementById('ichat-home');
+  if(box) box.innerHTML='';
+  playHomeChat();
+}
+var contractorsChatTimeout=null;
+function playContractorsChat(){
+  clearTimeout(contractorsChatTimeout);
+  var box=document.getElementById('ichat-contractors');
+  if(!box) return;
+  var script=[
+    {side:'ai',text:"Thanks for calling Turner Builders, this is Sam."},
+    {side:'caller',text:"Hi, I want a quote but I'm not totally sure what I need — my kitchen just feels outdated."},
+    {side:'ai',text:"No worries, happy to help scope it. Are you thinking new cabinets, countertops, or a full remodel?"},
+    {side:'caller',text:"Probably cabinets and counters, not the whole layout."},
+    {side:'ai',text:"Got it — I'll pass that to our estimator and have them call you back today."}
+  ];
+  var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
+  var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+  var i=0;
+  function step(){
+    var msg=script[i];
+    var row=document.createElement('div');
+    row.className='ichat-msg-row '+msg.side;
+    var av=document.createElement('span');
+    av.className='ichat-av '+msg.side;
+    av.innerHTML=msg.side==='ai'?aiAvSvg:callerAvSvg;
+    var el=document.createElement('div');
+    el.className='ichat-msg '+msg.side+' entering';
+    el.textContent=msg.text;
+    row.appendChild(av);
+    row.appendChild(el);
+    box.appendChild(row);
+    var rows=box.querySelectorAll('.ichat-msg-row:not(.leaving)');
+    if(rows.length>3){
+      var oldest=rows[0];
+      oldest.style.maxHeight=oldest.offsetHeight+'px';
+      oldest.offsetHeight;
+      oldest.classList.add('leaving');
+      oldest.addEventListener('transitionend',function(){
+        if(oldest.parentNode) oldest.parentNode.removeChild(oldest);
+      });
+    }
+    i++;
+    if(i<script.length){
+      contractorsChatTimeout=setTimeout(step,1800);
+    }else{
+      contractorsChatTimeout=setTimeout(function(){
+        box.innerHTML='';
+        i=0;
+        step();
+      },2500);
+    }
+  }
+  step();
+}
+function restartContractorsChat(){
+  clearTimeout(contractorsChatTimeout);
+  var box=document.getElementById('ichat-contractors');
+  if(box) box.innerHTML='';
+  playContractorsChat();
+}
+var reChatTimeout=null;
+function playReChat(){
+  clearTimeout(reChatTimeout);
+  var box=document.getElementById('ichat-re');
+  if(!box) return;
+  var script=[
+    {side:'ai',text:"Thanks for calling Skyline Realty, this is Nora."},
+    {side:'caller',text:"Hi, I wanted to see the house on Maple St. this weekend."},
+    {side:'ai',text:"That one's available Saturday at 11am. Want me to book it?"},
+    {side:'caller',text:"Actually — is the 3-bedroom on Elm still available too? I'd rather see that one."},
+    {side:'ai',text:"Yes, still on the market. I'll book you for Elm St. Saturday at 11 instead."}
+  ];
+  var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
+  var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
+  var i=0;
+  function step(){
+    var msg=script[i];
+    var row=document.createElement('div');
+    row.className='ichat-msg-row '+msg.side;
+    var av=document.createElement('span');
+    av.className='ichat-av '+msg.side;
+    av.innerHTML=msg.side==='ai'?aiAvSvg:callerAvSvg;
+    var el=document.createElement('div');
+    el.className='ichat-msg '+msg.side+' entering';
+    el.textContent=msg.text;
+    row.appendChild(av);
+    row.appendChild(el);
+    box.appendChild(row);
+    var rows=box.querySelectorAll('.ichat-msg-row:not(.leaving)');
+    if(rows.length>3){
+      var oldest=rows[0];
+      oldest.style.maxHeight=oldest.offsetHeight+'px';
+      oldest.offsetHeight;
+      oldest.classList.add('leaving');
+      oldest.addEventListener('transitionend',function(){
+        if(oldest.parentNode) oldest.parentNode.removeChild(oldest);
+      });
+    }
+    i++;
+    if(i<script.length){
+      reChatTimeout=setTimeout(step,1800);
+    }else{
+      reChatTimeout=setTimeout(function(){
+        box.innerHTML='';
+        i=0;
+        step();
+      },2500);
+    }
+  }
+  step();
+}
+function restartReChat(){
+  clearTimeout(reChatTimeout);
+  var box=document.getElementById('ichat-re');
+  if(box) box.innerHTML='';
+  playReChat();
+}
 document.querySelectorAll('.qa button').forEach(function(b){
   b.addEventListener('click',function(){b.parentNode.classList.toggle('open')});
 });
