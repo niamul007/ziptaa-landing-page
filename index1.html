@@ -75,8 +75,14 @@ nav .wrap-full{display:flex;align-items:center;height:70px}
 .hero2 h1 span{color:#2563EB}
 .hero2 p{font-size:18px;line-height:1.6;color:#6b7280;margin:24px auto 0;max-width:520px}
 .hero2 .cta{display:flex;justify-content:center;gap:12px;margin-top:32px}
-.hero2-frame{margin-top:40px;width:100%;background:#0b0b0d;border-radius:20px;padding:14px}
-.hero2-frame img{width:100%;aspect-ratio:16/9;border-radius:10px;object-fit:cover}
+.hero2-frame{margin-top:40px;width:100%;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.04)}
+.hero2-frame .browser-bar{height:38px;background:#f5f5f5;border-bottom:1px solid #ebebeb;border-radius:16px 16px 0 0;display:flex;align-items:center;padding:0 16px}
+.hero2-frame .browser-dots{display:flex;gap:8px}
+.hero2-frame .browser-dots span{width:12px;height:12px;border-radius:50%;display:block}
+.hero2-frame .dot-red{background:#FF5F57}
+.hero2-frame .dot-yellow{background:#FEBC2E}
+.hero2-frame .dot-green{background:#28C840}
+.hero2-frame img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 
 .pat-rise{--pat-a:.14;--pat-b:.09;--pat-gap:10px;position:relative;overflow:hidden}
 .pat-rise::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
@@ -681,6 +687,13 @@ footer .soc a svg{width:18px;height:18px}
       <a href="#" class="btn btn-primary">Start your free trial</a>
     </div>
     <div class="hero2-frame">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+      </div>
       <img class="ph" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Ziptaa dashboard showing Good morning greeting, 24 calls today, 18 appointments booked, 6 new leads, AI status active, a weekly calls line chart and a recent calls table">
     </div>
   </div>
