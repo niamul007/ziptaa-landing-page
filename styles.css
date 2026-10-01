@@ -863,3 +863,14 @@ footer .soc a svg{width:18px;height:18px}
 .frame::before,.frame::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:#EEF0F3;z-index:5;pointer-events:none}
 .frame::before{left:16px}
 .frame::after{right:16px}
+
+/* SCROLL REVEAL */
+.rv{opacity:0}
+.rv-in{opacity:1;animation:rvUp .6s ease-out var(--rv-d,0s) backwards}
+@keyframes rvUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1}.rv-in{animation:none}}
+
+/* CTA: tighter vertical rhythm on phones */
+@media(max-width:560px){
+  .cta-sec{padding-top:56px;padding-bottom:72px}
+}
