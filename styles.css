@@ -786,6 +786,8 @@ footer .soc a svg{width:18px;height:18px}
   .bt-card.bt-c1 .bt-agent{display:none}
   .bt-card.bt-c1 .bt-call{left:-6px;right:-6px;width:auto}
   .bt-card.bt-c1 .bt-head b,.bt-card.bt-c1 .bt-head small,.bt-card.bt-c1 .bt-meta span{white-space:nowrap}
+  .bt-card.bt-c2 .bt-days,.bt-card.bt-c2 .bt-body{grid-template-columns:repeat(2,1fr)}
+  .bt-card.bt-c2 .bt-days div:nth-child(3),.bt-card.bt-c2 .bt-body .bt-col:nth-child(3){display:none}
 }
 
 /* PATTERNS: shared background system */
