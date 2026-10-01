@@ -88,9 +88,9 @@ function playSalonChat(){
   var script=[
     {side:'ai',text:"Thanks for calling Glow Studio, this is Ava speaking."},
     {side:'caller',text:"Hi, I need a color appointment but I'm only free after 6pm."},
-    {side:'ai',text:"Let me check evening slots... Thursday at 6:30 works. Same stylist as last time?"},
-    {side:'caller',text:"Oh — you know who did my color before?"},
-    {side:'ai',text:"I do, it's in your file. Locking that in now — see you Thursday!"}
+    {side:'ai',text:"Let me check evening slots... Thursday at 6:30 works. Does that suit you?"},
+    {side:'caller',text:"That works. It's Dana Lee."},
+    {side:'ai',text:"Booked for Thursday at 6:30, Dana. I'll text you a confirmation."}
   ];
   var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
   var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
@@ -144,10 +144,10 @@ function playHomeChat(){
   if(!box) return;
   var script=[
     {side:'ai',text:"Rapid Home Solutions, this is Alex — what's going on?"},
-    {side:'caller',text:"My basement's flooding, I need someone now!"},
-    {side:'ai',text:"Understood — I'm flagging this as urgent. Can you give me your address?"},
-    {side:'caller',text:"412 Birchwood Lane."},
-    {side:'ai',text:"Got it. Dispatching our on-call tech now, they'll call you in 10 minutes."}
+    {side:'caller',text:"My water heater is leaking. Can someone come take a look?"},
+    {side:'ai',text:"Sorry about that. I can book a visit. Does Thursday at 9am work?"},
+    {side:'caller',text:"Yes. It's Sam Ortiz, 412 Birchwood Lane."},
+    {side:'ai',text:"Booked for Thursday at 9am, Sam. I'll text you a confirmation."}
   ];
   var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
   var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
@@ -204,7 +204,7 @@ function playContractorsChat(){
     {side:'caller',text:"Hi, I want a quote but I'm not totally sure what I need — my kitchen just feels outdated."},
     {side:'ai',text:"No worries, happy to help scope it. Are you thinking new cabinets, countertops, or a full remodel?"},
     {side:'caller',text:"Probably cabinets and counters, not the whole layout."},
-    {side:'ai',text:"Got it — I'll pass that to our estimator and have them call you back today."}
+    {side:'ai',text:"Got it. I've saved your details and the team has been notified."}
   ];
   var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
   var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
@@ -259,9 +259,9 @@ function playReChat(){
   var script=[
     {side:'ai',text:"Thanks for calling Skyline Realty, this is Nora."},
     {side:'caller',text:"Hi, I wanted to see the house on Maple St. this weekend."},
-    {side:'ai',text:"That one's available Saturday at 11am. Want me to book it?"},
-    {side:'caller',text:"Actually — is the 3-bedroom on Elm still available too? I'd rather see that one."},
-    {side:'ai',text:"Yes, still on the market. I'll book you for Elm St. Saturday at 11 instead."}
+    {side:'ai',text:"Happy to pass that to our agent. Can I get your name?"},
+    {side:'caller',text:"Tom Reyes."},
+    {side:'ai',text:"Thanks, Tom. I've saved your showing request and notified the agent."}
   ];
   var aiAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
   var callerAvSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>';
