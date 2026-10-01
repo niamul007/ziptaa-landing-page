@@ -358,3 +358,36 @@ document.querySelectorAll('.qa button').forEach(function(b){
   },{threshold:.15});
   io.observe(hd);
 })();
+/* SCROLL REVEAL */
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var sel=[
+    '.how .how-head,.how .sec-title,.how .sec-sub',
+    '.features2 .pr-head,.features2 .sec-title,.features2 .sec-sub',
+    '.industries>.wrap>.pr-head,.industries>.wrap>.sec-title,.industries>.wrap>.sec-sub',
+    '.pricing>.wrap>.pr-head,.pricing>.wrap>.sec-title,.pricing>.wrap>.pr-sub',
+    '.pr-grid>.pr-plan',
+    '.pricing .pr-note',
+    '.faq-l',
+    '.faq-list>.qa',
+    '.cta-box',
+    'footer .top>.f-brand,footer .top>.col'
+  ];
+  var io=new IntersectionObserver(function(es){
+    var k=0;
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.style.setProperty('--rv-d',Math.min(k*.08,.32)+'s');
+      e.target.classList.add('rv-in');
+      io.unobserve(e.target);
+      k++;
+    });
+  },{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+  sel.forEach(function(s){
+    [].forEach.call(document.querySelectorAll(s),function(el){
+      el.classList.add('rv');
+      io.observe(el);
+    });
+  });
+})();
