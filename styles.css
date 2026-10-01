@@ -780,6 +780,13 @@ footer .soc a svg{width:18px;height:18px}
   .hero .cta{flex-direction:column;align-items:center}
   .f-bottom .in{flex-direction:column;gap:12px}
 }
+@media(max-width:560px){
+  .bt-card.bt-c1{height:auto;min-height:328px}
+  .bt-card.bt-c1 p{margin-bottom:20px}
+  .bt-card.bt-c1 .bt-agent{display:none}
+  .bt-card.bt-c1 .bt-call{left:-6px;right:-6px;width:auto}
+  .bt-card.bt-c1 .bt-head b,.bt-card.bt-c1 .bt-head small,.bt-card.bt-c1 .bt-meta span{white-space:nowrap}
+}
 
 /* PATTERNS: shared background system */
 .pat-rise,.pat-hang,.pat-edge{--pat-a:.14;--pat-b:.09;--pat-gap:10px;position:relative;overflow:hidden}
