@@ -1,0 +1,31 @@
+:root{--head:'Space Grotesk',system-ui,sans-serif}
+footer{line-height:1.5}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{text-decoration:none}
+footer p{margin-bottom:0}
+footer .brand{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:700;font-size:22px;color:var(--ink);justify-self:start}
+footer{background:linear-gradient(180deg,#FFFFFF 0%,#F2F6FF 100%);border-top:1px solid #E5E7EB;color:#4B5563;position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(37,99,235,.12) 0%,rgba(37,99,235,0) 60%),repeating-linear-gradient(90deg,rgba(37,99,235,.09) 0 1px,transparent 1px 10px);
+  -webkit-mask-image:linear-gradient(to top,black 0%,transparent 70%);mask-image:linear-gradient(to top,black 0%,transparent 70%)}
+footer .top{position:relative;z-index:1;max-width:1350px;margin:0 auto;padding:72px 16px 88px;display:grid;grid-template-columns:1fr 196px 196px 170px}
+footer .col a.f-cta{color:var(--blue);font-weight:500}
+.f-brand .brand{color:var(--ink);font-size:22px}
+.f-brand .logo{width:32px;height:32px}
+.f-brand p{margin-top:20px;font-size:16px;line-height:26px;max-width:250px;color:#4B5563}
+footer h4{font-family:var(--head);font-size:20px;color:var(--ink);font-weight:500;margin-bottom:12px}
+footer .col a{display:block;font-size:14px;line-height:30px;color:#4B5563}
+footer .col a:hover{color:var(--ink)}
+footer .soc a{display:flex;align-items:center;gap:8px;font-size:14px;line-height:36px;color:var(--ink)}
+footer .soc a svg{width:18px;height:18px}
+.f-bottom{position:relative;z-index:1;border-top:1px solid #E5E7EB}
+.f-bottom .in{max-width:1350px;margin:0 auto;display:flex;justify-content:space-between;padding:24px 16px 20px;font-size:14px;color:#6B7280}
+.f-links{display:flex;gap:14px}
+.f-links a{padding-right:14px;border-right:1px solid #94A3B8;line-height:1}
+.f-links a:last-child{border:0;padding:0}
+@media(max-width:1000px){
+  footer .top{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:560px){
+  .f-bottom .in{flex-direction:column;gap:12px}
+}

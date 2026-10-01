@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service — Ziptaa</title>
+<title>Terms of Service | Ziptaa</title>
 <meta name="description" content="Ziptaa's Terms of Service, including terms for our SMS text messaging program.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,9 @@
   :root {
     --blue: #2563EB;
     --blue-dark: #1D4ED8;
-    --bg: #F9FAFB;
+    --bg: #FFFFFF;
     --card: #FFFFFF;
-    --ink: #111827;
+    --ink: #0F172A;
     --body: #374151;
     --muted: #6B7280;
     --border: #E5E7EB;
@@ -26,7 +26,7 @@
     background: var(--bg);
     line-height: 1.7;
   }
-  h1, h2, .brand {
+  h1, h2 {
     font-family: 'Space Grotesk', sans-serif;
     color: var(--ink);
   }
@@ -34,75 +34,75 @@
   a:hover { text-decoration: underline; }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
-  header {
-    padding: 24px 0;
-    border-bottom: 1px solid var(--border);
-    background: var(--card);
-  }
-  header .wrap { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 14px;
-    background: var(--blue); color: #fff;
-  }
-  .btn:hover { background: var(--blue-dark); text-decoration: none; }
-
-  main { padding: 56px 0 80px; }
   .updated { color: var(--muted); font-size: 14px; margin-bottom: 40px; }
   h1 { font-size: 34px; margin-bottom: 8px; }
   h2 { font-size: 20px; margin: 36px 0 12px; }
   p, li { font-size: 15px; margin-bottom: 14px; }
   ul { padding-left: 20px; margin-bottom: 14px; }
   .highlight {
-    background: #EFF6FF;
-    border: 1px solid #DBEAFE;
+    background: #F2F6FF;
+    border: 1px solid rgba(37,99,235,.12);
     border-radius: 10px;
     padding: 20px 24px;
     margin: 20px 0;
   }
   .highlight p:last-child { margin-bottom: 0; }
-
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 0;
-    background: var(--card);
-    text-align: center;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  footer a { margin: 0 8px; }
 </style>
+<link rel="stylesheet" href="legal.css">
+<link rel="stylesheet" href="footer.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a href="/" class="brand"><span class="dot"></span>Ziptaa</a>
-    <a href="https://app.ziptaa.com" class="btn">Go to Dashboard</a>
+<nav class="lg-nav">
+  <div class="lg-wrap">
+    <a href="index.html" class="lg-logo"><img src="ziptaa_logo.png" alt="Ziptaa">Ziptaa</a>
+    <div class="lg-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#how">How It Works</a>
+    </div>
+    <div class="lg-right">
+      <a href="https://app.ziptaa.com/login" class="lg-signin" target="_blank" rel="noopener noreferrer">Sign in</a>
+      <a href="https://app.ziptaa.com/signup" class="lg-btn lg-btn-primary" target="_blank" rel="noopener noreferrer">Start free trial</a>
+    </div>
   </div>
-</header>
+</nav>
 
-<main class="wrap">
-  <h1>Terms of Service</h1>
-  <p class="updated">Last updated: September 2026</p>
+<main class="lg-page">
+  <header class="lg-head">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: September 2026</p>
+  </header>
 
+  <div class="lg-grid">
+  <nav class="lg-toc" aria-label="On this page">
+    <div class="lg-toc-label">On this page</div>
+    <a href="#description-of-service">1. Description of Service</a>
+    <a href="#sms-terms-conditions">2. SMS Terms &amp; Conditions</a>
+    <a href="#use-of-the-service">3. Use of the Service</a>
+    <a href="#business-account-holders">4. For Business Account Holders</a>
+    <a href="#disclaimers">5. Disclaimers</a>
+    <a href="#limitation-of-liability">6. Limitation of Liability</a>
+    <a href="#changes-to-these-terms">7. Changes to These Terms</a>
+    <a href="#contact-us">8. Contact Us</a>
+  </nav>
+  <div class="lg-doc">
   <p>These Terms of Service ("Terms") govern your use of Ziptaa's AI receptionist platform, including calls and text messages sent by an AI receptionist on behalf of a business that uses Ziptaa ("Service"). By using the Service — including by speaking with a Ziptaa-powered AI receptionist or receiving a text message from one — you agree to these Terms.</p>
 
-  <h2>1. Description of Service</h2>
+  <h2 id="description-of-service">1. Description of Service</h2>
   <p>Ziptaa provides small businesses with an AI receptionist that answers incoming phone calls, books and manages appointments, and sends related text message confirmations and updates. Ziptaa acts on behalf of the business you are contacting; the business remains responsible for the services it provides to you.</p>
 
-  <h2>2. SMS Terms & Conditions</h2>
+  <h2 id="sms-terms-conditions">2. SMS Terms & Conditions</h2>
   <div class="highlight">
     <p>By booking an appointment through a Ziptaa-powered AI receptionist and verbally agreeing to receive a text confirmation, you consent to receive SMS text messages related to your appointment, including booking confirmations, reminders, and updates if your appointment is rescheduled or cancelled.</p>
     <p><strong>Message frequency varies</strong> based on your appointment activity. <strong>Message and data rates may apply.</strong> You may opt out at any time by replying <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for help. Carriers are not liable for delayed or undelivered messages.</p>
   </div>
 
-  <h2>3. Use of the Service</h2>
+  <h2 id="use-of-the-service">3. Use of the Service</h2>
   <p>You agree to provide accurate information when speaking with a Ziptaa-powered AI receptionist, including a valid phone number for appointment-related communications. You agree not to use the Service for any unlawful purpose.</p>
 
-  <h2>4. For Business Account Holders</h2>
+  <h2 id="business-account-holders">4. For Business Account Holders</h2>
   <p>If you are a business using the Ziptaa dashboard, you are additionally responsible for:</p>
   <ul>
     <li>Providing accurate business information, including hours, services, and policies configured in the platform</li>
@@ -111,27 +111,42 @@
     <li>Any billing terms associated with your subscription plan, including trial periods and renewal terms as presented at checkout</li>
   </ul>
 
-  <h2>5. Disclaimers</h2>
+  <h2 id="disclaimers">5. Disclaimers</h2>
   <p>The Service is provided "as is." Ziptaa's AI receptionist is designed to assist with appointment booking and general inquiries, but Ziptaa does not guarantee uninterrupted availability of calls, text messages, or the underlying voice, calendar, or messaging services it relies on.</p>
 
-  <h2>6. Limitation of Liability</h2>
+  <h2 id="limitation-of-liability">6. Limitation of Liability</h2>
   <p>To the fullest extent permitted by law, Ziptaa is not liable for indirect, incidental, or consequential damages arising from your use of the Service, including missed or delayed calls or text messages.</p>
 
-  <h2>7. Changes to These Terms</h2>
+  <h2 id="changes-to-these-terms">7. Changes to These Terms</h2>
   <p>We may update these Terms from time to time. Continued use of the Service after changes are posted constitutes acceptance of the updated Terms.</p>
 
-  <h2>8. Contact Us</h2>
+  <h2 id="contact-us">8. Contact Us</h2>
   <p>Ziptaa<br>
   10000 West Ridgewood Drive 211<br>
   Parma Heights, Ohio 44130, US<br>
   <a href="mailto:support@ziptaa.com">support@ziptaa.com</a></p>
+  </div>
+  </div>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div>© 2026 Ziptaa. All rights reserved.</div>
-    <div style="margin-top:8px;">
-      <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="mailto:support@ziptaa.com">support@ziptaa.com</a>
+  <div class="top">
+    <div class="f-brand">
+      <a href="index.html" class="brand"><img src="ziptaa_logo.png" alt="Ziptaa" style="height:28px;width:auto">Ziptaa</a>
+      <p>The AI receptionist built for US small businesses.</p>
+      <a href="mailto:support@ziptaa.com" style="display:block;margin-top:12px;color:#4B5563;font-size:14px">support@ziptaa.com</a>
+    </div>
+    <div class="col" style="grid-column:2"><h4>Product</h4><a href="index.html#features">Features</a><a href="index.html#how">How It Works</a><a href="index.html#pricing">Pricing</a><a href="index.html#industries">Industries</a><a href="https://app.ziptaa.com/signup" class="f-cta">Start free trial</a></div>
+    <div class="col"><h4>Company</h4><a href="mailto:support@ziptaa.com">Contact</a></div>
+    <div class="col soc"><h4>Social</h4>
+      <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2.5h3.3l-7.2 8.3 8.5 11.2h-6.6l-5.2-6.8-6 6.8H1.7l7.7-8.8L1.3 2.5H8l4.7 6.200zm-1.2 17.500h1.800L7 4.400H5z"/></svg>X</a>
+      <a href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="currentColor"/><path d="M6.5 10h2.5v8H6.5zM7.7 6a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM11 10h2.4v1.1c.4-.7 1.3-1.3 2.5-1.3 2.500 0 3 1.6 3 3.8V18h-2.5v-3.9c0-.9 0-2.100-1.300-2.100s-1.500 1-1.500 2V18H11z" fill="#fff"/></svg>LinkedIn</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <div class="in">
+      <span>© 2026 Ziptaa, Inc. All rights reserved.</span>
+      <div class="f-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
     </div>
   </div>
 </footer>
