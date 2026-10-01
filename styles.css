@@ -36,10 +36,17 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);font-weight:700}
 .top-container{width:100%;max-width:none;margin:0;border-radius:0;background:#fff;position:relative;overflow:hidden}
 .top-container::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
-    linear-gradient(to top,rgba(37,99,235,0.22) 0%,rgba(37,99,235,0) 60%),
+    linear-gradient(to top,rgba(37,99,235,0.22) 0%,rgba(37,99,235,0) 70%),
     repeating-linear-gradient(90deg,rgba(37,99,235,0.10) 0 1px,transparent 1px 8px);
-  -webkit-mask-image:linear-gradient(to top,black 0%,transparent 65%);
-  mask-image:linear-gradient(to top,black 0%,transparent 65%)}
+  -webkit-mask-image:linear-gradient(to top,black 0%,transparent 76%);
+  mask-image:linear-gradient(to top,black 0%,transparent 76%)}
+.top-container::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 45% 38% at 50% 60%,rgba(37,99,235,.16),transparent 100%);
+  animation:washDrift 16s ease-in-out infinite alternate}
+@keyframes washDrift{
+  from{transform:translateX(-3%);opacity:.6}
+  to{transform:translateX(3%);opacity:1}}
+@media(prefers-reduced-motion:reduce){.top-container::after{animation:none}}
 nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(0,0,0,0.08);height:70px;padding:0}
 nav .wrap{display:flex;align-items:center;height:70px;max-width:1350px}
 .brand{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:700;font-size:24px;color:var(--ink)}
@@ -79,6 +86,15 @@ nav .wrap{display:flex;align-items:center;height:70px;max-width:1350px}
 .hero2-frame .dot-yellow{background:#FEBC2E}
 .hero2-frame .dot-green{background:#28C840}
 .hero2-frame img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+
+/* Hero one-time load animation */
+.hero-pill{animation:heroUp .6s ease-out backwards}
+.hero2 h1{animation:heroUp .6s ease-out .08s backwards}
+.hero2 p:not(.hero-note){animation:heroUp .6s ease-out .16s backwards}
+.hero2 .cta{animation:heroUp .6s ease-out .24s backwards}
+.hero2 .hero-note{animation:heroUp .6s ease-out .30s backwards}
+@keyframes heroUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.hero-pill,.hero2 h1,.hero2 p:not(.hero-note),.hero2 .cta,.hero2 .hero-note{animation:none}}
 
 /* HERO dashboard replica (coded, replaces the placeholder image) */
 .hd{--hd-ok:#059669;--hd-ok-bg:#ECFDF5;width:100%;border-radius:10px;background:#fff;overflow:hidden;display:flex;text-align:left;font-family:var(--text);color:var(--body)}
