@@ -19,11 +19,11 @@
   "use strict";
 
   var CONFIG = {
-    PUBLIC_KEY: "PASTE_PUBLIC_KEY",
+    PUBLIC_KEY: "eae9b2e5-8f79-4114-b16e-9fd036fc08eb",
     ASSISTANTS: {
-      salon: "PASTE_ASSISTANT_ID_SALON",
-      dental: "PASTE_ASSISTANT_ID_DENTAL",
-      home: "PASTE_ASSISTANT_ID_HOME"
+      salon: "e0f2b32c-1b0f-46b1-8c94-3f71399b0589",
+      dental: "ec56baa8-b8af-4ef1-b1fa-0888c670787b",
+      home: "0e617364-6038-4990-a94b-03068de59fa5"
     },
     MAX_SECONDS: 90,
     DAILY_LIMIT: 3
