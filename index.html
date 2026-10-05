@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="demo-card.css">
 </head>
 <body>
 
@@ -74,7 +75,8 @@
       <p class="hero-note">7-day free trial. Cancel anytime.</p>
     </div>
     <div class="hero3-visual">
-      <div class="demo-card" id="demo-card">
+      <div class="demo-card" id="demo-card" data-state="idle">
+      <div class="demo-view" data-view="idle">
         <div class="demo-head">
           <h2 class="demo-title">Try a live demo call</h2>
           <span class="demo-badge">No signup needed</span>
@@ -109,6 +111,116 @@
         </fieldset>
         <button type="button" class="demo-start" id="demo-start">Talk to Julia</button>
         <p class="demo-note">Demo businesses are fictional. Calls end after 90 seconds.</p>
+      </div>
+      <div class="demo-view" data-view="live">
+        <div class="demo-live-head">
+          <span class="demo-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></span>
+          <span class="demo-opt-text"><strong class="demo-live-name">Maple &amp; Main Hair Studio</strong><small class="demo-live-role">Julia, front desk</small></span>
+          <span class="demo-mini-wave" aria-hidden="true"><span class="demo-mini-bar" style="--h:10px"></span><span class="demo-mini-bar" style="--h:22px"></span><span class="demo-mini-bar" style="--h:14px"></span><span class="demo-mini-bar" style="--h:26px"></span><span class="demo-mini-bar" style="--h:12px"></span></span>
+        </div>
+        <div class="demo-live-status">
+          <span class="demo-live-badge"><span class="demo-live-dot" aria-hidden="true"></span>Live</span>
+          <span class="demo-timer">0:42 / 1:30</span>
+        </div>
+        <!--
+        <div class="demo-wave" aria-hidden="true">
+          <span class="demo-wave-bar" style="--h:14px"></span>
+          <span class="demo-wave-bar" style="--h:22px"></span>
+          <span class="demo-wave-bar" style="--h:10px"></span>
+          <span class="demo-wave-bar" style="--h:30px"></span>
+          <span class="demo-wave-bar" style="--h:18px"></span>
+          <span class="demo-wave-bar" style="--h:34px"></span>
+          <span class="demo-wave-bar" style="--h:8px"></span>
+          <span class="demo-wave-bar" style="--h:26px"></span>
+          <span class="demo-wave-bar" style="--h:16px"></span>
+          <span class="demo-wave-bar" style="--h:32px"></span>
+          <span class="demo-wave-bar" style="--h:12px"></span>
+          <span class="demo-wave-bar" style="--h:24px"></span>
+          <span class="demo-wave-bar" style="--h:6px"></span>
+          <span class="demo-wave-bar" style="--h:28px"></span>
+          <span class="demo-wave-bar" style="--h:20px"></span>
+          <span class="demo-wave-bar" style="--h:34px"></span>
+          <span class="demo-wave-bar" style="--h:10px"></span>
+          <span class="demo-wave-bar" style="--h:22px"></span>
+          <span class="demo-wave-bar" style="--h:30px"></span>
+          <span class="demo-wave-bar" style="--h:14px"></span>
+          <span class="demo-wave-bar" style="--h:26px"></span>
+          <span class="demo-wave-bar" style="--h:8px"></span>
+          <span class="demo-wave-bar" style="--h:18px"></span>
+          <span class="demo-wave-bar" style="--h:12px"></span>
+        </div>
+        -->
+        <div class="demo-captions" aria-live="polite">
+          <p class="demo-cap demo-cap-julia"><span class="demo-cap-who">Julia</span>Hi, thanks for calling Maple and Main Hair Studio, this is Julia. How can I help you today?</p>
+          <p class="demo-cap demo-cap-you"><span class="demo-cap-who">You</span>Hi, do you have anything open Thursday afternoon for a haircut?</p>
+          <p class="demo-cap demo-cap-julia"><span class="demo-cap-who">Julia</span>We do. Would two or four o'clock work better for you?</p>
+        </div>
+        <button type="button" class="demo-end" id="demo-end">End call</button>
+        <p class="demo-live-note">Demo call. It ends by itself at 1:30.</p>
+      </div>
+      <div class="demo-view" data-view="connecting">
+        <div class="demo-live-head">
+          <span class="demo-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></span>
+          <span class="demo-opt-text"><strong class="demo-live-name">Maple &amp; Main Hair Studio</strong><small class="demo-live-role">Julia, front desk</small></span>
+        </div>
+        <div class="demo-live-status">
+          <span class="demo-conn-badge"><span class="demo-spinner" aria-hidden="true"></span>Connecting…</span>
+        </div>
+        <div class="demo-conn-body">
+          <span class="demo-conn-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19v3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><rect x="9" y="2" width="6" height="13" rx="3"/></svg></span>
+          <p class="demo-conn-title">Connecting you to Julia…</p>
+          <p class="demo-conn-sub">Your browser may ask to use the microphone. Choose Allow.</p>
+        </div>
+        <button type="button" class="demo-start demo-conn-btn" disabled>Connecting…</button>
+        <p class="demo-conn-note">Demo calls end after 90 seconds.</p>
+      </div>
+      <div class="demo-view" data-view="ended">
+        <div class="demo-live-head">
+          <span class="demo-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></span>
+          <span class="demo-opt-text"><strong class="demo-live-name">Maple &amp; Main Hair Studio</strong><small class="demo-live-role">Julia, front desk</small></span>
+        </div>
+        <div class="demo-live-status">
+          <span class="demo-ended-badge">Call ended</span>
+          <span class="demo-ended-time">1:12</span>
+        </div>
+        <div class="demo-ended-body">
+          <span class="demo-ended-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg></span>
+          <p class="demo-ended-title">That was Julia, your AI receptionist.</p>
+          <p class="demo-ended-sub">She answers every call, books the appointment and texts the confirmation. Want her on your phone line?</p>
+        </div>
+        <a href="https://app.ziptaa.com/signup" class="demo-start demo-ended-cta">Start your free trial</a>
+        <button type="button" class="demo-again" id="demo-again">Try another business</button>
+        <p class="demo-ended-note">Demo businesses are fictional.</p>
+      </div>
+      <div class="demo-view" data-view="error">
+        <div class="demo-live-head">
+          <span class="demo-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></span>
+          <span class="demo-opt-text"><strong class="demo-live-name">Maple &amp; Main Hair Studio</strong><small class="demo-live-role">Julia, front desk</small></span>
+        </div>
+        <div class="demo-live-status">
+          <span class="demo-error-badge">Can't connect</span>
+        </div>
+        <div class="demo-error-body">
+          <div class="demo-error-case" data-case="mic">
+            <span class="demo-error-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19v3"/><path d="M15 9.34V5a3 3 0 0 0-5.68-1.33"/><path d="M16.95 16.95A7 7 0 0 1 5 12v-2"/><path d="M18.89 13.23A7 7 0 0 0 19 12v-2"/><path d="m2 2 20 20"/><path d="M9 9v3a3 3 0 0 0 5.12 2.12"/></svg></span>
+            <p class="demo-error-title">Microphone is blocked</p>
+            <p class="demo-error-sub">Click the lock icon in your browser's address bar, allow the microphone, then try again.</p>
+          </div>
+          <div class="demo-error-case" data-case="failed">
+            <span class="demo-error-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+            <p class="demo-error-title">Couldn't connect</p>
+            <p class="demo-error-sub">Check your internet connection and try again.</p>
+          </div>
+          <div class="demo-error-case" data-case="limit">
+            <span class="demo-error-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <p class="demo-error-title">Demo limit reached</p>
+            <p class="demo-error-sub">You've used today's demo calls. Try again tomorrow, or start your free trial to talk to Julia on your own line.</p>
+          </div>
+        </div>
+        <button type="button" class="demo-start demo-retry" id="demo-retry">Try again</button>
+        <a href="https://app.ziptaa.com/signup" class="demo-start demo-error-trial">Start your free trial</a>
+        <p class="demo-error-note">Demo businesses are fictional.</p>
+      </div>
       </div>
     </div>
   </div>
@@ -430,7 +542,7 @@
 </section>
 
 <!-- DEMO CALL -->
-<section class="demo frame-sec tex-ticks" id="demo">
+<!-- <section class="demo frame-sec tex-ticks" id="demo">
   <div class="wrap">
     <div class="demo-l">
       <span class="pr-pill"><i></i>Live demo</span>
@@ -459,7 +571,7 @@
       <div class="bt-b">Thanks for calling Bright Smile Dental, this is Julia. How can I help you today?</div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- INDUSTRIES -->
 <section class="industries frame-sec" id="industries">
