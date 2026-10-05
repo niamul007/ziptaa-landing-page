@@ -36,7 +36,7 @@
       { role: "you", gap: 4000, text: "Sure, it's Dana Reyes, 512 555 0142." }
     ],
     dental: [
-      { role: "julia", gap: 1500, text: "Lakeview Family Dental, this is Julia. How can I help you?" },
+      { role: "julia", gap: 1500, text: "Lakeview Family Dental, this is Emma. How can I help you?" },
       { role: "you", gap: 3500, text: "Hello, I'm due for a check-up and cleaning. Do you have anything next week?" },
       { role: "julia", gap: 4000, text: "Yes, we do. I can offer Tuesday at 9:00 or Thursday at 3:30. Are you a current patient with us?" },
       { role: "you", gap: 4000, text: "I am. Thursday at 3:30 works for me." },
@@ -44,7 +44,7 @@
       { role: "you", gap: 4000, text: "It's Marcus Hill, March 8th, 1987." }
     ],
     home: [
-      { role: "julia", gap: 1500, text: "Ridgeline Plumbing and Heating, this is Julia. What can I do for you?" },
+      { role: "julia", gap: 1500, text: "Ridgeline Plumbing and Heating, this is Jack. What can I do for you?" },
       { role: "you", gap: 3500, text: "Hi, my kitchen sink is leaking under the cabinet and there's water on the floor." },
       { role: "julia", gap: 4000, text: "I'm sorry to hear that. Please turn off the shutoff valve under the sink if you can. Is the leak steady or just dripping?" },
       { role: "you", gap: 4500, text: "Steady drip. I've shut the valve and it's slowed down." },

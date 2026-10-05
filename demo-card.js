@@ -20,6 +20,16 @@
 
     var timerId = null;
     var startedAt = 0;
+    var currentAgent = "Julia";
+
+    function agentFor(radio) {
+      return (radio && radio.getAttribute("data-agent")) || "Julia";
+    }
+
+    function updateStartLabel(radio) {
+      if ((card.dataset.state || "idle") !== "idle") return;
+      startBtn.textContent = "Talk to " + agentFor(radio);
+    }
 
     function fmt(totalSeconds) {
       var s = Math.max(0, Math.floor(totalSeconds));
@@ -72,14 +82,24 @@
       var nameEl = option.querySelector("strong");
       var iconEl = option.querySelector(".demo-avatar");
       var name = nameEl ? nameEl.textContent : "";
+      var agent = agentFor(radio);
       var views = ["live", "connecting", "ended", "error"];
+      currentAgent = agent;
 
       views.forEach(function (view) {
         var root = card.querySelector('.demo-view[data-view="' + view + '"]');
         if (!root) return;
         var nameTarget = root.querySelector(".demo-live-name");
         var avatarTarget = root.querySelector(".demo-avatar");
+        var roleTargets = root.querySelectorAll(".demo-live-role");
+        var connTitle = view === "connecting" ? root.querySelector(".demo-conn-title") : null;
+        var endedTitle = view === "ended" ? root.querySelector(".demo-ended-title") : null;
         if (nameTarget) nameTarget.textContent = name;
+        for (var r = 0; r < roleTargets.length; r++) {
+          roleTargets[r].textContent = agent + ", front desk";
+        }
+        if (connTitle) connTitle.textContent = "Connecting you to " + agent + "…";
+        if (endedTitle) endedTitle.textContent = "That was " + agent + ", your AI receptionist.";
         if (avatarTarget && iconEl) {
           // Copy the static avatar icon nodes from the option (no string markup).
           avatarTarget.textContent = "";
@@ -134,7 +154,7 @@
         p.className = "demo-cap " + (isJulia ? "demo-cap-julia" : "demo-cap-you");
         var who = document.createElement("span");
         who.className = "demo-cap-who";
-        who.textContent = isJulia ? "Julia" : "You";
+        who.textContent = isJulia ? currentAgent : "You";
         p.appendChild(who);
         p.appendChild(document.createTextNode(String(msg.text == null ? "" : msg.text)));
         captions.appendChild(p);
@@ -159,6 +179,7 @@
     function begin() {
       var radio = selectedRadio();
       if (!radio) return;
+      updateStartLabel(radio);
       copySelection(radio);
       setState("connecting");
 
@@ -179,6 +200,13 @@
 
     startBtn.addEventListener("click", begin);
 
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener("change", function () {
+        var radio = selectedRadio();
+        if (radio) updateStartLabel(radio);
+      });
+    }
+
     if (endBtn) {
       endBtn.addEventListener("click", function () {
         if (window.DemoCall && typeof window.DemoCall.stop === "function") {
@@ -196,6 +224,9 @@
     if (retryBtn) {
       retryBtn.addEventListener("click", begin);
     }
+
+    var initialRadio = selectedRadio();
+    if (initialRadio) updateStartLabel(initialRadio);
   }
 
   if (document.readyState === "loading") {
