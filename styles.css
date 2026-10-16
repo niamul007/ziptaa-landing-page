@@ -863,6 +863,8 @@ footer .soc a svg{width:18px;height:18px}
 .frame::before,.frame::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:#EEF0F3;z-index:5;pointer-events:none}
 .frame::before{left:16px}
 .frame::after{right:16px}
+/* At and above the frame max-width the frame is centred and its lines move inward, so content sits flush with them (16px) */
+@media(min-width:1350px){nav .wrap,footer .top,.f-bottom .in{padding-inline:16px}}
 
 /* SCROLL REVEAL */
 .rv{opacity:0}
