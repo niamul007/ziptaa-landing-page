@@ -738,7 +738,7 @@ END STEPPER V1 old card 2 css */
 
 /* CTA */
 .cta-sec{background:#fff;padding:120px 0;position:relative}
-.cta-sec::before{content:"";position:absolute;top:-1px;left:50%;width:100vw;transform:translateX(-50%);height:1px;background:#EEF0F3}
+.cta-sec::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:#EEF0F3;box-shadow:0 0 0 100vmax #EEF0F3;clip-path:inset(0 -100vmax);will-change:transform}
 .cta-box{border-radius:32px;text-align:center;color:#fff;padding:90px 24px;background:linear-gradient(120deg,rgba(59,130,246,0.05) 0%,rgba(59,130,246,0.15) 100%)}
 .cta-box h2{color:#1a1a1a;font-size:48px;line-height:1.2}
 .cta-box p{color:#1a1a1a;font-size:18px;margin-top:16px}
@@ -854,7 +854,7 @@ footer .soc a svg{width:18px;height:18px}
 .frame::before{left:0}
 .frame::after{right:0}
 .frame-sec{position:relative;padding:96px 48px;border-top:0}
-.frame-sec::before{content:"";position:absolute;top:-1px;left:50%;width:100vw;transform:translateX(-50%);height:1px;background:#EEF0F3}
+.frame-sec::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:#EEF0F3;box-shadow:0 0 0 100vmax #EEF0F3;clip-path:inset(0 -100vmax);will-change:transform}
 .frame-sec > *:not(.plus){position:relative;z-index:1}
 .tex-ticks::after{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--tick-h,60px);background:repeating-linear-gradient(90deg,rgba(37,99,235,.08) 0 1px,transparent 1px 8px);-webkit-mask-image:linear-gradient(to top,black 0%,transparent 100%);mask-image:linear-gradient(to top,black 0%,transparent 100%);pointer-events:none;z-index:0}
 .tex-dots::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,.10) 1px,transparent 1.4px);background-size:16px 16px;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 22%,black 78%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,black 22%,black 78%,transparent 100%);pointer-events:none;z-index:0}
